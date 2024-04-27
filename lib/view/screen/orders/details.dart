@@ -22,7 +22,7 @@ class OrdersDetails extends StatelessWidget {
                 child: Column(
                   children: [
                     Card(
-                      color: AppColor.black.withOpacity(0.5),
+
                       shadowColor: AppColor.primaryColor,
                       child: Padding(
                         padding: const EdgeInsets.symmetric(

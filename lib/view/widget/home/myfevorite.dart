@@ -26,14 +26,13 @@ class CustomFavoriteItems extends GetView<MyFavoriteControllerImp> {
         // const EdgeInsets.symmetric(horizontal: 2, vertical: 5),
         decoration: BoxDecoration(boxShadow: [
           BoxShadow(
-              blurRadius: 10,
+              blurRadius: 50,
               color: AppColor.primaryColor.withOpacity(0.4),
               blurStyle: BlurStyle.inner,
               offset: const Offset(0, 0))
         ]),
         child: Card(
           // elevation: 3,
-          color: AppColor.black.withOpacity(0.8),
           child: Padding(
             padding:
                 const EdgeInsets.only(top: 0, bottom: 5, left: 10, right: 10),
@@ -62,7 +61,7 @@ class CustomFavoriteItems extends GetView<MyFavoriteControllerImp> {
                       "Rating 3.5",
                       style: TextStyle(
                           fontSize: 12,
-                          color: AppColor.backgroundColor.withOpacity(0.5)),
+                          color: AppColor.black.withOpacity(0.5)),
                       textAlign: TextAlign.center,
                     ),
                     Container(
@@ -87,7 +86,7 @@ class CustomFavoriteItems extends GetView<MyFavoriteControllerImp> {
                     Text(
                       "${itemsModel.itemsPrice} EG",
                       style: const TextStyle(
-                          color: AppColor.backgroundColor,
+                          color: AppColor.black,
                           fontWeight: FontWeight.bold,
                           fontSize: 16),
                     ),

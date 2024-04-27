@@ -20,7 +20,7 @@ void showDialogRating(BuildContext context, String orderId) {
         textAlign: TextAlign.center,
         style: TextStyle(
           fontSize: 25,
-          color: AppColor.white,
+          color: AppColor.black,
           fontWeight: FontWeight.bold,
         ),
       ),
@@ -30,7 +30,7 @@ void showDialogRating(BuildContext context, String orderId) {
         textAlign: TextAlign.center,
         style: TextStyle(
           fontSize: 15,
-          color: AppColor.white,
+          color: AppColor.black,
         ),
       ),
       // your app's logo?

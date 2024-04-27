@@ -5,7 +5,7 @@ class AppImageAssets {
   static const String onBoardingImageQuality = "$rootImages/quality.jpg";
   static const String onBoardingImageOk = "$rootImages/ok.png";
   static const String onBoardingImageGlu = "$rootImages/glu.png";
-  static const String onBoardingImageKodixaLogo = "$rootImages/kodixa.png";
+  static const String onBoardingImageKodixaLogo = "assets/images/Chef-pana.png";
   static const String imageAvatar = "$rootImages/avatar.png";
   static const String onBoardingImageClean = "$rootImages/clean.png";
   static const String onBoardingImageSg = "$rootImages/sg_logo.png";

@@ -11,11 +11,8 @@ class AboutUs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColor.black,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: AppColor.black,
-        foregroundColor: AppColor.primaryColor,
         centerTitle: true,
         title: Text("about".tr),
       ),

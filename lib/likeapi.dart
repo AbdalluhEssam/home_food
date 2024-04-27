@@ -46,6 +46,7 @@ class AppLink {
   static const String governoratesDelete = "$serverLink/address/governorates/delete.php";
 //================================== Check Coupon ===============================//
   static const String couponView   = "$serverLink/coupon/checkcoupon.php";
+  static const String categories   = "$serverLink/categories/viewcategories.php";
 //================================== ORDERS ===============================//
   static const String checkOutAdd = "$serverLink/orders/checkout.php";
   static const String pendingOrders = "$serverLink/orders/pending.php";

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:home_food/controller/home/home_controller.dart';
 import 'package:home_food/core/constant/routes.dart';
 import 'package:home_food/data/datasource/remote/items_data.dart';
+import 'package:home_food/data/model/categories_model.dart';
 import 'package:home_food/data/model/itemsmodel.dart';
 import '../../core/services/services.dart';
 import '../../core/class/statusrequest.dart';
@@ -11,7 +12,8 @@ import '../../core/functions/handlingdatacontroller.dart';
 class OffersControllerImp extends SearchMaxController {
   MyServices myServices = Get.find();
 
-  List<ItemsModel> itemsOffers = [];
+  List<CategoriesModel> itemsOffers = [];
+  List categories = [];
 
   ItemsData itemsData = ItemsData(Get.find());
 
@@ -19,6 +21,13 @@ class OffersControllerImp extends SearchMaxController {
   String? email;
   String? id;
 
+  goToItems(categories, selectedCat, catId) {
+    Get.toNamed(AppRoute.itemsView, arguments: {
+      "categories": categories,
+      "selectedCat": selectedCat,
+      "catId": catId,
+    });
+  }
   initialData() {
     username = myServices.sharedPreferences.getString("username");
     email = myServices.sharedPreferences.getString("email");
@@ -48,7 +57,8 @@ class OffersControllerImp extends SearchMaxController {
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == "success") {
         List item = response['data'];
-        itemsOffers.addAll(item.map((e) => ItemsModel.fromJson(e)));
+        categories.addAll(response['data']) ;
+        itemsOffers.addAll(item.map((e) => CategoriesModel.fromJson(e)));
       } else {
         statusRequest = StatusRequest.failure;
       }

@@ -27,9 +27,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     Get.put(HomeControllerImp());
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
-        backgroundColor: AppColor.black,
         appBar: AppBar(
           toolbarHeight: 0,
         ),
@@ -45,7 +43,7 @@ class _HomePageState extends State<HomePage> {
                         onPressedIconFavorite: () {
                           Get.toNamed(AppRoute.myFavorite);
                         },
-                        titleAppBar: "findproduct".tr,
+                        titleAppBar: "${translateDataBase("ابحث عن طعامك", "Find food")}",
                         onPressedSearch: () {
                           controller.onSearchItems();
                         },
@@ -85,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                                         viewportFraction: 1,
                                         aspectRatio: 2.0,
                                         initialPage: 2,
-                                        height: size.height * 0.24,
+                                        // height: size.height * 0.25,
                                         enableInfiniteScroll: true,
                                         reverse: false,
                                         autoPlay: true,
@@ -131,18 +129,15 @@ class _HomePageState extends State<HomePage> {
                                       );
                                     }).toList(),
                                   ),
-                                  CustomTitleHome(title: "categories".tr),
+                                  CustomTitleHome(title: "Chefs".tr),
                                   const SizedBox(
                                     height: 5,
                                   ),
                                   const ListCategoriesHome(),
                                   if (controller.itemsTopSelling.isNotEmpty)
-                                    CustomTitleHome(title: "Top Selling".tr),
+                                    CustomTitleHome(title: "${translateDataBase("عروض اليوم", "Offer Day")}".tr),
                                   if (controller.itemsTopSelling.isNotEmpty)
                                     const ItemsViewTopSelling(),
-
-                                  const CustomTitleHome(title: "Offer"),
-                                  const ItemsView()
                                 ],
                               ))
                           : ListItemsSearch(
@@ -167,40 +162,33 @@ class ListItemsSearch extends GetView<HomeControllerImp> {
           onTap: () {
             controller.goToProductDetails(listData[index]);
           },
-          child: Container(
-            decoration: BoxDecoration(
-                color: AppColor.primaryColor.withOpacity(0.2),
-                boxShadow: [BoxShadow(offset: Offset.fromDirection(10, 10))]),
-            margin: const EdgeInsets.symmetric(vertical: 2),
-            child: Card(
-              color: AppColor.black.withOpacity(0.5),
-              child: Container(
-                padding: const EdgeInsets.all(10),
-                child: Row(
-                  children: [
-                    Expanded(
-                        child: Hero(
-                      tag: "${listData[index].itemsId}",
-                      child: CachedNetworkImage(
-                          imageUrl:
-                              "${AppLink.imageItems}/${listData[index].itemsImage}"),
-                    )),
-                    Expanded(
-                        flex: 2,
-                        child: ListTile(
-                          title: Text(
-                            translateDataBase(
-                                listData[index].itemsNameAr.toString(),
-                                listData[index].itemsName.toString()),
+          child: Card(
+            child: Container(
+              padding: const EdgeInsets.all(10),
+              child: Row(
+                children: [
+                  Expanded(
+                      child: Hero(
+                    tag: "${listData[index].itemsId}",
+                    child: CachedNetworkImage(
+                        imageUrl:
+                            "${AppLink.imageItems}/${listData[index].itemsImage}"),
+                  )),
+                  Expanded(
+                      flex: 2,
+                      child: ListTile(
+                        title: Text(
+                          translateDataBase(
+                              listData[index].itemsNameAr.toString(),
+                              listData[index].itemsName.toString()),
+                          style: const TextStyle(
+                              color: AppColor.black),
+                        ),
+                        subtitle: Text("${listData[index].itemsPrice}",
                             style: const TextStyle(
-                                color: AppColor.backgroundColor),
-                          ),
-                          subtitle: Text("${listData[index].itemsPrice}",
-                              style: const TextStyle(
-                                  color: AppColor.backgroundColor)),
-                        )),
-                  ],
-                ),
+                                color: AppColor.primaryColor)),
+                      )),
+                ],
               ),
             ),
           ),

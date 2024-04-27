@@ -5,16 +5,22 @@ import 'color.dart';
 
 ThemeData themeEnglish = ThemeData(
   useMaterial3: true,
-  scaffoldBackgroundColor: AppColor.black,
-  cardColor: AppColor.black,
+  scaffoldBackgroundColor: AppColor.white,
+  cardColor: AppColor.white,
+  listTileTheme: const ListTileThemeData(
+    iconColor: AppColor.primaryColor,
+    tileColor:Colors.transparent,
+    textColor: Colors.black
+
+  ),
   floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: AppColor.primaryColor,
-      foregroundColor: AppColor.black,
+      foregroundColor: AppColor.white,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(50)))),
   appBarTheme: const AppBarTheme(
     elevation: 0,
-    backgroundColor: AppColor.black,
+    backgroundColor: AppColor.white,
     foregroundColor: AppColor.primaryColor,
     centerTitle: true,
     titleTextStyle: TextStyle(
@@ -23,26 +29,26 @@ ThemeData themeEnglish = ThemeData(
         fontFamily: "Cairo",
         fontWeight: FontWeight.bold),
     systemOverlayStyle: SystemUiOverlayStyle(
-        statusBarColor: AppColor.black,
-        statusBarIconBrightness: Brightness.light),
+        statusBarColor: AppColor.white,
+        statusBarIconBrightness: Brightness.dark),
   ),
   textTheme: const TextTheme(
     displayLarge: TextStyle(
         fontSize: 20,
         fontWeight: FontWeight.bold,
-        color: AppColor.white,
+        color: AppColor.black,
         fontFamily: "Cairo"),
     displayMedium: TextStyle(
         fontSize: 25,
         fontWeight: FontWeight.bold,
-        color: AppColor.white,
+        color: AppColor.black,
         fontFamily: "Cairo"),
     bodyLarge: TextStyle(
-        height: 2, color: AppColor.white, fontSize: 14, fontFamily: "Cairo"),
+        height: 2, color: AppColor.black, fontSize: 14, fontFamily: "Cairo"),
     bodyMedium: TextStyle(
         height: 2,
         fontWeight: FontWeight.bold,
-        color: AppColor.white,
+        color: AppColor.black,
         fontFamily: "Cairo",
         fontSize: 14),
   ),
@@ -51,42 +57,48 @@ ThemeData themeEnglish = ThemeData(
 
 ThemeData themeArabic = ThemeData(
   useMaterial3: true,
-  cardColor: AppColor.black,
-  scaffoldBackgroundColor: AppColor.black,
+  cardColor: AppColor.white,
+  scaffoldBackgroundColor: AppColor.white,
+  listTileTheme: const ListTileThemeData(
+      iconColor: AppColor.primaryColor,
+      tileColor:Colors.transparent,
+      textColor: Colors.black
+
+  ),
   floatingActionButtonTheme: const FloatingActionButtonThemeData(
-      backgroundColor: AppColor.primaryColor,
-      foregroundColor: AppColor.black,
+      backgroundColor: AppColor.white,
+      foregroundColor: AppColor.primaryColor,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(50)))),
   appBarTheme: const AppBarTheme(
     elevation: 0,
-    backgroundColor: AppColor.black,
+    backgroundColor: AppColor.white,
     foregroundColor: AppColor.primaryColor,
     centerTitle: true,
     titleTextStyle: TextStyle(
         fontSize: 25, color: AppColor.primaryColor, fontFamily: "Cairo"),
     systemOverlayStyle: SystemUiOverlayStyle(
-        statusBarColor: AppColor.black,
-        statusBarIconBrightness: Brightness.light),
+        statusBarColor: AppColor.white,
+        statusBarIconBrightness: Brightness.dark),
   ),
   fontFamily: "Cairo",
   textTheme: const TextTheme(
     displayLarge: TextStyle(
         fontSize: 20,
         fontWeight: FontWeight.bold,
-        color: AppColor.white,
+        color: AppColor.black,
         fontFamily: "Cairo"),
     displayMedium: TextStyle(
         fontSize: 25,
         fontWeight: FontWeight.bold,
-        color: AppColor.white,
+        color: AppColor.black,
         fontFamily: "Cairo"),
     bodyLarge: TextStyle(
-        height: 2, color: AppColor.white, fontSize: 14, fontFamily: "Cairo"),
+        height: 2, color: AppColor.black, fontSize: 14, fontFamily: "Cairo"),
     bodyMedium: TextStyle(
         height: 2,
         fontWeight: FontWeight.bold,
-        color: AppColor.white,
+        color: AppColor.black,
         fontSize: 14,
         fontFamily: "Cairo"),
   ),

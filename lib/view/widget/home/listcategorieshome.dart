@@ -1,8 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import '../../../controller/home/home_controller.dart';
-import '../../../core/constant/color.dart';
 import '../../../core/functions/translatedordatabase.dart';
 import '../../../data/model/categories_model.dart';
 import '../../../likeapi.dart';
@@ -21,7 +20,8 @@ class ListCategoriesHome extends GetView<HomeControllerImp> {
         itemBuilder: ((context, index) {
           return CategoriesHome(
               i: index,
-              categoriesModel: CategoriesModel.fromJson(controller.categories[index]));
+              categoriesModel:
+                  CategoriesModel.fromJson(controller.categories[index]));
         }),
         separatorBuilder: (BuildContext context, int index) => const SizedBox(
           width: 15,
@@ -41,7 +41,6 @@ class CategoriesHome extends GetView<HomeControllerImp> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
 
     return InkWell(
         onTap: () {
@@ -50,14 +49,9 @@ class CategoriesHome extends GetView<HomeControllerImp> {
         },
         child: Column(
           children: [
-            Container(
-              height: size.height * 0.08,
-              width: size.width * 0.18,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(14),
-                  color: AppColor.primaryColor),
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: SvgPicture.network(
+            CircleAvatar(
+              radius: 35,
+              backgroundImage: CachedNetworkImageProvider(
                   "${AppLink.imageCategories}/${categoriesModel.categoriesImage}"),
             ),
             Text(

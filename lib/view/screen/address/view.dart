@@ -14,7 +14,6 @@ class AddressView extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(AddressControllerImp());
     return Scaffold(
-        backgroundColor: AppColor.black,
         appBar: AppBar(
           title: Text("address".tr),
           centerTitle: true,
@@ -51,13 +50,8 @@ class ListItemsAddress extends GetView<AddressControllerImp> {
       itemBuilder: (context, index) {
         return InkWell(
           child: Container(
-            decoration: BoxDecoration(
-                color: AppColor.backgroundColor.withOpacity(0.2),
-                boxShadow: [BoxShadow(offset: Offset.fromDirection(10, 10))]),
             margin: const EdgeInsets.symmetric(vertical: 2),
             child: Card(
-              color: AppColor.black.withOpacity(0.5),
-              elevation: 0,
               child: Container(
                   padding: const EdgeInsets.all(10),
                   child: Wrap(
@@ -76,12 +70,12 @@ class ListItemsAddress extends GetView<AddressControllerImp> {
                                         translateDataBase(
                                             "اسم عنوانك : ", "Address Name : "),
                                         style: const TextStyle(
-                                            color: AppColor.backgroundColor),
+                                            color: AppColor.black),
                                       ),
                                       Text(
                                         listData[index].addressName.toString(),
                                         style: const TextStyle(
-                                            color: AppColor.backgroundColor),
+                                            color: AppColor.black),
                                       )
                                     ],
                                   ),
@@ -91,7 +85,7 @@ class ListItemsAddress extends GetView<AddressControllerImp> {
                                         translateDataBase(
                                             "المحافظة : ", "City : "),
                                         style: const TextStyle(
-                                            color: AppColor.backgroundColor),
+                                            color: AppColor.black),
                                       ),
                                       Text(
                                           translateDataBase(
@@ -102,7 +96,7 @@ class ListItemsAddress extends GetView<AddressControllerImp> {
                                                   .governorateNameEn
                                                   .toString()),
                                           style: const TextStyle(
-                                              color: AppColor.backgroundColor))
+                                              color: AppColor.black))
                                     ],
                                   ),
                                   Wrap(
@@ -115,8 +109,8 @@ class ListItemsAddress extends GetView<AddressControllerImp> {
                                                 translateDataBase(
                                                     "الشارع : ", "Street : "),
                                                 style: const TextStyle(
-                                                    color: AppColor
-                                                        .backgroundColor,fontSize: 12),
+                                                    color: AppColor.black,
+                                                    fontSize: 12),
                                               )),
                                           Expanded(
                                               flex: 3,
@@ -125,8 +119,8 @@ class ListItemsAddress extends GetView<AddressControllerImp> {
                                                     .addressStreet
                                                     .toString(),
                                                 style: const TextStyle(
-                                                    color: AppColor
-                                                        .backgroundColor,fontSize: 12),
+                                                    color: AppColor.black,
+                                                    fontSize: 12),
                                               ))
                                         ],
                                       )
@@ -186,7 +180,7 @@ class ListItemsAddress extends GetView<AddressControllerImp> {
                             // alignment: Alignment.center,
                             child: const Icon(
                               Icons.delete,
-                              color: AppColor.primaryColor,
+                              color: AppColor.black,
                             ),
                           ),
                         ),

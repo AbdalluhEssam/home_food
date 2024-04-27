@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:home_food/controller/home/productdetalis_controller.dart';
 
@@ -11,38 +12,50 @@ class TopProductPageDetails extends GetView<ProductDetailsControllerImp> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
 
     return Stack(
-      clipBehavior: Clip.none,
+      clipBehavior: Clip.antiAlias,
       children: [
-        Container(
-          height: size.height / 3.5,
-          decoration: const BoxDecoration(
-              color: AppColor.primaryColor,
-              borderRadius: BorderRadius.vertical(bottom: Radius.circular(30))),
-        ),
+        Hero(
+            tag: "${controller.itemsModel.itemsId}",
+            child: Container(
+              height: Get.width * 0.7,
+              width: Get.width,
+              decoration: BoxDecoration(
+                  color: AppColor.primaryColor,
+                  image: DecorationImage(
+                    repeat: ImageRepeat.repeatX,
+                      image: CachedNetworkImageProvider(
+                          maxWidth: Get.width.toInt(),
+                          "${AppLink.imageItems}/${controller.itemsModel.itemsImage}")),
+                  borderRadius:
+                      const BorderRadius.vertical(bottom: Radius.circular(30))),
+            )),
         controller.itemsModel.itemsDescount != "0"
-            ? Positioned(
-                left: 10,
+            ? PositionedDirectional(
+                end: 10,
                 top: 10,
                 child: Image.asset(
                   "assets/images/dis.png",
                   width: 80,
                 ))
             : const Text(""),
-        Positioned(
-          top: -8,
-          right: Get.width / 8,
-          left: Get.width / 8,
-          child: Hero(
-            tag: "${controller.itemsModel.itemsId}",
-            child: CachedNetworkImage(
-              imageUrl:
-                  "${AppLink.imageItems}/${controller.itemsModel.itemsImage}",
-              height: size.height / 2,
-              width: size.width,
-// fit: BoxFit.fill,
+        Align(
+          alignment: AlignmentDirectional.topStart,
+          child: Padding(
+            padding: const EdgeInsets.all(15),
+            child: CircleAvatar(
+              backgroundColor: AppColor.white,
+              child: IconButton(
+                  onPressed: () {
+                    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+                        overlays: SystemUiOverlay.values); // to re-show bars
+                    Get.back();
+                  },
+                  icon: const Icon(
+                    Icons.arrow_back,
+                    color: AppColor.black,
+                  )),
             ),
           ),
         ),

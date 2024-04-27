@@ -4,12 +4,18 @@ class AppColor {
   static const Color gray = Colors.grey;
   static const Color gray800 = Color(0xff515151);
   static const Color green = Colors.green;
+  static const Color textColor = Color(0xFFccc7c5);
   static const Color primaryColor = Color(0xFFFF0000);
   static const Color secoundColor = Color(0xffe20436);
-  static const Color black = Color(0xFFccc7c5);
+  static const Color black = Colors.black;
   static const Color red = Color(0xff801616);
   static const Color backgroundColor = Color(0xfff7f7f7);
   static const Color white = Colors.white;
+  static const Color mainColor = Color(0xFFFF0000);
+
+  //static final Color mainColor = const Color(0xFFfa4552);
+  static const Color iconColor1 = Color(0xFFffd28d);
+  static const Color iconColor2 = Color(0xFFfcab88);
   static const ta = LinearGradient(colors: [
     Color(0xffffd200),
     Color(0xff6e6025),

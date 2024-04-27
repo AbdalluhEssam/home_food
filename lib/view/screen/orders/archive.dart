@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fluttericon/font_awesome_icons.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:home_food/core/class/handlingdataview.dart';
@@ -49,7 +48,6 @@ class CardListOrders extends GetView<OrdersArchiveController> {
       elevation: 5,
       clipBehavior: Clip.antiAliasWithSaveLayer,
       shadowColor: AppColor.black,
-      color: AppColor.primaryColor.withOpacity(0.12),
       child: Container(
         padding: const EdgeInsets.all(10),
         child: Column(
@@ -78,8 +76,7 @@ class CardListOrders extends GetView<OrdersArchiveController> {
             Text(
                 "Order Price : ${controller.myServices.formatNumber(ordersModel.ordersPrice)} EG"),
             Text("Delivery Price : ${ordersModel.ordersPricedelivery} EG"),
-            Text(
-                "Payment Method : ${ordersModel.ordersPaymentmethod == "0" ? "Cash" : "Payment Card"}"),
+            Text("Payment Method : ${ordersModel.ordersPaymentmethod == "0" ? "Cash" : "Payment Card"}"),
             Row(
               children: [
                 const Text("Order Status : "),

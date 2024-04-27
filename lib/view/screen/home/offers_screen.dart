@@ -5,7 +5,6 @@ import 'package:home_food/core/class/handlingdataview.dart';
 import 'package:home_food/view/widget/offers/custom_offer.dart';
 import '../../../core/constant/routes.dart';
 import '../../widget/home/customappbar.dart';
-import '../address/view.dart';
 import 'home.dart';
 
 class OffersView extends StatelessWidget {
@@ -50,8 +49,11 @@ class OffersView extends StatelessWidget {
                                 itemCount: controller.itemsOffers.length,
                                 itemBuilder: (context, index) =>
                                     CustomListItemsOffers(
-                                        itemsModel:
-                                            controller.itemsOffers[index]),
+                                  categories: controller.categories,
+                                  categoriesModel:
+                                      controller.itemsOffers[index],
+                                  i: index,
+                                ),
                                 separatorBuilder:
                                     (BuildContext context, int index) =>
                                         const SizedBox(

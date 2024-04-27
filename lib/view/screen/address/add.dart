@@ -15,7 +15,6 @@ class AddressAdd extends StatelessWidget {
   Widget build(BuildContext context) {
     AddAddressControllerImp controller = Get.put(AddAddressControllerImp());
     return Scaffold(
-        backgroundColor: AppColor.black,
         appBar: AppBar(
           title: Text("addaddress".tr),
           centerTitle: true,
@@ -57,7 +56,7 @@ class AddressAdd extends StatelessWidget {
                       "عنوانك بوسطة ال GPS", "Your address by GPS"),
                   textAlign: TextAlign.center,
                   style: const TextStyle(
-                      color: AppColor.backgroundColor,
+                      color: AppColor.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 20),
                 ),
@@ -122,13 +121,13 @@ class AddressAdd extends StatelessWidget {
                       init: GovernorateControllerImp(),
                       builder: (controllerImp) => DropdownButton(
                             style: const TextStyle(
-                              color: AppColor.backgroundColor,
+                              color: AppColor.black,
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                             ),
                             menuMaxHeight: Get.height * 0.3,
                             isExpanded: true,
-                            dropdownColor: Colors.black.withOpacity(0.7),
+                            dropdownColor: Colors.white,
                             alignment: Alignment.center,
                             borderRadius: BorderRadius.circular(20),
                             icon: const Icon(
@@ -139,7 +138,7 @@ class AddressAdd extends StatelessWidget {
                               translateDataBase(
                                   "اختر المحافظة", "Select the City"),
                               style: const TextStyle(
-                                  color: AppColor.backgroundColor),
+                                  color: AppColor.black),
                             ),
                             items: List.generate(
                                     controllerImp.governorate.length,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:home_food/core/constant/color.dart';
 import '../../controller/onboarding_controller.dart';
 import '../widget/onboarding/custombutton.dart';
 import '../widget/onboarding/customslider.dart';
@@ -13,7 +12,6 @@ class OnBoarding extends GetView<OnBoardingControllerImp> {
   Widget build(BuildContext context) {
     Get.put(OnBoardingControllerImp());
     return const Scaffold(
-        backgroundColor: AppColor.black,
         body: SafeArea(
           child: InkWell(
               child: Column(

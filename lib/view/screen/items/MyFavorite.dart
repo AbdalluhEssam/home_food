@@ -15,11 +15,8 @@ class MyFavorite extends StatelessWidget {
       appBar: AppBar(
         title: const Text("My Favorite"),
         centerTitle: true,
-        foregroundColor: AppColor.primaryColor,
-        backgroundColor: AppColor.black,
         elevation: 0,
       ),
-      backgroundColor: AppColor.black,
       body: Container(
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: GetBuilder<MyFavoriteControllerImp>(

@@ -11,11 +11,8 @@ class HelpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColor.black,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: AppColor.black,
-        foregroundColor: AppColor.primaryColor,
         centerTitle: true,
         title: Text("help".tr),
       ),

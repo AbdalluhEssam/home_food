@@ -49,7 +49,7 @@ class CustomFormAddress extends StatelessWidget {
               fontSize: 14,
               fontWeight: FontWeight.bold),
           hintStyle: const TextStyle(
-              color: AppColor.backgroundColor,
+              color: AppColor.black,
               fontSize: 14,
               fontWeight: FontWeight.bold),
           border: const OutlineInputBorder(

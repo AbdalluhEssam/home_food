@@ -14,7 +14,6 @@ class HomeScreen extends StatelessWidget {
     Get.put(HomeScreenControllerImp());
     return GetBuilder<HomeScreenControllerImp>(
         builder: (controller) => Scaffold(
-              backgroundColor: AppColor.primaryColor.withOpacity(0.15),
               floatingActionButton: FloatingActionButton(
                 backgroundColor: AppColor.primaryColor,
                 onPressed: () {
@@ -28,7 +27,7 @@ class HomeScreen extends StatelessWidget {
               floatingActionButtonLocation:
                   FloatingActionButtonLocation.centerDocked,
               bottomNavigationBar: BottomAppBar(
-                color: AppColor.black,
+                color: AppColor.white,
                 shape: const CircularNotchedRectangle(),
                 notchMargin: 10,
                 padding: const EdgeInsets.all(1),

@@ -20,13 +20,10 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60,
+      height: 50,
       margin: const EdgeInsets.only(top: 15),
       child: Row(
         children: [
-          const SizedBox(
-            width: 10,
-          ),
           Expanded(
               child: TextFormField(
             controller: myController,
@@ -45,11 +42,11 @@ class CustomAppBar extends StatelessWidget {
                   color: AppColor.primaryColor,
                 ),
                 hintText: titleAppBar,
-                contentPadding: const EdgeInsets.all(30),
+                contentPadding: const EdgeInsets.symmetric(horizontal: 20),
                 hintStyle: const TextStyle(color: AppColor.primaryColor),
                 border: OutlineInputBorder(
                   borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(5),
                 ),
                 filled: true,
                 fillColor: AppColor.primaryColor.withOpacity(0.1)),
@@ -60,9 +57,8 @@ class CustomAppBar extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
                 color: AppColor.primaryColor.withOpacity(0.1),
-                borderRadius: BorderRadius.circular(20)),
+                borderRadius: BorderRadius.circular(5)),
             width: 60,
-            padding: const EdgeInsets.symmetric(vertical: 8),
             child: IconButton(
               onPressed: onPressedIconFavorite,
               icon: const Icon(

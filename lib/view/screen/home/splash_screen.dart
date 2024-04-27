@@ -32,10 +32,7 @@ class _MySplashScreenState extends State<MySplashScreen> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 0,
-        systemOverlayStyle:
-        const SystemUiOverlayStyle(statusBarColor: AppColor.black),
       ),
-      backgroundColor: AppColor.black,
       body: SafeArea(
         child: Container(
           margin: const EdgeInsets.only(top: 100, bottom: 80),
@@ -55,7 +52,7 @@ class _MySplashScreenState extends State<MySplashScreen> {
               const Spacer(),
 
               Text(
-                "home_food | ©2023",
+                "Home Food | ©2023",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Theme.of(context)

@@ -26,7 +26,7 @@ class NotificationScreen extends GetView<NotificationControllerImp> {
                 itemBuilder: (context, index) {
                   return Container(
                       decoration: BoxDecoration(
-                          color: AppColor.black,
+
                           borderRadius: BorderRadius.circular(10),
                           boxShadow: const [
                             BoxShadow(
@@ -34,7 +34,7 @@ class NotificationScreen extends GetView<NotificationControllerImp> {
                                 blurRadius: 5)
                           ]),
                       child: Card(
-                          color: AppColor.black.withOpacity(0.8),
+
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 15, vertical: 10),
@@ -59,7 +59,7 @@ class NotificationScreen extends GetView<NotificationControllerImp> {
                                           "${controller.notification[index].notificationBody}",
                                           style: const TextStyle(
                                               fontSize: 10,
-                                              color: AppColor.white)),
+                                              color: AppColor.black)),
                                     ],
                                   ),
                                 ),

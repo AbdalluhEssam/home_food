@@ -56,7 +56,7 @@ class BottomNavgationBarCart extends StatelessWidget {
                                     fontSize: 14,
                                     fontWeight: FontWeight.bold),
                                 hintStyle: const TextStyle(
-                                    color: AppColor.backgroundColor,
+                                    color: AppColor.gray,
                                     fontSize: 14,
                                     fontWeight: FontWeight.bold),
                                 border: const OutlineInputBorder(
@@ -128,12 +128,12 @@ class BottomNavgationBarCart extends StatelessWidget {
                       Text(
                         "price".tr,
                         style: const TextStyle(
-                            fontSize: 16, color: AppColor.backgroundColor),
+                            fontSize: 16, color: AppColor.black),
                       ),
                       Text(
                         price,
                         style: const TextStyle(
-                            fontSize: 16, color: AppColor.backgroundColor),
+                            fontSize: 16, color: AppColor.black),
                       )
                     ],
                   ),
@@ -143,12 +143,12 @@ class BottomNavgationBarCart extends StatelessWidget {
                       Text(
                         "discount".tr,
                         style: const TextStyle(
-                            fontSize: 16, color: AppColor.backgroundColor),
+                            fontSize: 16, color: AppColor.black),
                       ),
                       Text(
                         delivery,
                         style: const TextStyle(
-                            fontSize: 16, color: AppColor.backgroundColor),
+                            fontSize: 16, color: AppColor.black),
                       )
                     ],
                   ),

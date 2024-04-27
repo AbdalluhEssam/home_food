@@ -46,7 +46,6 @@ class CardListOrders extends GetView<OrdersPendingController> {
       elevation: 5,
       clipBehavior: Clip.antiAliasWithSaveLayer,
       shadowColor: AppColor.black,
-      color: AppColor.primaryColor.withOpacity(0.12),
       child: Container(
         padding: const EdgeInsets.all(10),
         child: Column(

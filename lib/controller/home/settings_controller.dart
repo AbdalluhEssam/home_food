@@ -1,4 +1,3 @@
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:get/get.dart';
 import 'package:home_food/core/services/services.dart';
 
@@ -15,8 +14,6 @@ class SettingsController extends GetxController {
   }
 
   logout() {
-    FirebaseMessaging.instance.unsubscribeFromTopic("users");
-    FirebaseMessaging.instance.unsubscribeFromTopic("user$id");
     myServices.sharedPreferences.clear();
     Get.offAllNamed(AppRoute.login);
   }

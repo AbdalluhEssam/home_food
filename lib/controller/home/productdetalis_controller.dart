@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:home_food/core/constant/color.dart';
 import 'package:home_food/data/model/itemsmodel.dart';
@@ -41,8 +42,17 @@ class ProductDetailsControllerImp extends ProductDetailsController {
 
   @override
   void onInit() {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+        overlays: [SystemUiOverlay.bottom]);
     initialData();
     super.onInit();
+  }
+
+  @override
+  void dispose() {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+        overlays: SystemUiOverlay.values); // to re-show bars
+    super.dispose();
   }
 
   @override

@@ -13,8 +13,6 @@ class PolicyReturn extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: AppColor.backgroundColor,
-        foregroundColor: AppColor.primaryColor,
         centerTitle: true,
         title: Text("policyReturn".tr),
       ),

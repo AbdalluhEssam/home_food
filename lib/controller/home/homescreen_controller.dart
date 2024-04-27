@@ -32,8 +32,8 @@ class HomeScreenControllerImp extends HomeScreenController {
       "icon": Icons.notifications_active_outlined
     },
     {
-      "title": translateDataBase("العروض", "Offers"),
-      "icon": Icons.local_offer_outlined
+      "title": translateDataBase("الشيفات", "Chefs"),
+      "icon": Icons.people_outline
     },
     {
       "title": translateDataBase("الاعدادات", "Settings"),
@@ -49,13 +49,6 @@ class HomeScreenControllerImp extends HomeScreenController {
 
   @override
   void onInit() {
-    FirebaseMessaging.instance.getToken().then((value) {
-      String? token = value;
-      log(token.toString());
-    });
-    String id = myServices.sharedPreferences.getString("id")!;
-    FirebaseMessaging.instance.subscribeToTopic("users");
-    FirebaseMessaging.instance.subscribeToTopic("user$id");
     statusRequest = StatusRequest.success;
     super.onInit();
   }

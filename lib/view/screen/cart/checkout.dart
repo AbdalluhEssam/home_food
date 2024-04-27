@@ -15,7 +15,6 @@ class CheckOut extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(CheckOutController());
     return Scaffold(
-        backgroundColor: AppColor.black,
         appBar: AppBar(
           title: Text("checkoutpage".tr),
           centerTitle: true,

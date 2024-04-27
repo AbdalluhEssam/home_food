@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:home_food/core/class/handlingdataview.dart';
 import 'package:home_food/core/constant/routes.dart';
 import 'package:home_food/view/widget/productdetails/priceandQ.dart';
-import 'package:home_food/view/widget/productdetails/subItemsList.dart';
 import 'package:home_food/view/widget/productdetails/topPageProductDetails.dart';
 import '../../../controller/home/productdetalis_controller.dart';
 import '../../../core/constant/color.dart';
@@ -17,7 +16,6 @@ class ProductDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(ProductDetailsControllerImp());
     return Scaffold(
-        backgroundColor: AppColor.black,
         appBar: AppBar(
           toolbarHeight: 0,
           systemOverlayStyle:
@@ -30,6 +28,8 @@ class ProductDetails extends StatelessWidget {
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             onPressed: () {
+              SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+                  overlays: SystemUiOverlay.values);
               Get.toNamed(AppRoute.cart);
             },
             color: AppColor.primaryColor,
@@ -44,9 +44,7 @@ class ProductDetails extends StatelessWidget {
         ),
         body: ListView(children: [
           const TopProductPageDetails(),
-          SizedBox(
-            height: Get.height * 0.1,
-          ),
+
           GetBuilder<ProductDetailsControllerImp>(
             builder: (controller) => HandlingDataViewNot(
               statusRequest: controller.statusRequest,
@@ -68,8 +66,10 @@ class ProductDetails extends StatelessWidget {
                         height: 13,
                       ),
                       PriceAndCountItems(
-                          itemsDescount:"${controller.itemsModel.itemsDescount}",
-                          itemsPriceDiscount:"${controller.itemsModel.itemsPriceDiscount}",
+                          itemsDescount:
+                              "${controller.itemsModel.itemsDescount}",
+                          itemsPriceDiscount:
+                              "${controller.itemsModel.itemsPriceDiscount}",
                           onAdd: () {
                             controller.add();
                           },
@@ -88,22 +88,11 @@ class ProductDetails extends StatelessWidget {
                         style: Theme.of(context)
                             .textTheme
                             .bodyMedium!
-                            .copyWith(color: AppColor.backgroundColor),
+                            .copyWith(color: AppColor.black),
                       ),
                       const SizedBox(
                         height: 16,
                       ),
-                      Text(
-                        "Color",
-                        style: Theme.of(context)
-                            .textTheme
-                            .displayLarge!
-                            .copyWith(color: AppColor.primaryColor),
-                      ),
-                      const SizedBox(
-                        height: 14,
-                      ),
-                      const SubItemsList()
                     ],
                   )),
             ),

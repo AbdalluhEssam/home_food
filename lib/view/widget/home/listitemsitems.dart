@@ -62,7 +62,7 @@ class CategoriesHome extends GetView<ItemsControllerImp> {
                   style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: AppColor.gray),
+                      color: AppColor.black),
                 ),
               ),
             )

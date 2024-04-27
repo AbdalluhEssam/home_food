@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import '../../../controller/auth/login_controller.dart';
 import '../../../core/class/handlingdataview.dart';
@@ -12,7 +13,8 @@ import '../../widget/auth/customtextformauth.dart';
 import '../../widget/auth/customtexttitleauth.dart';
 import '../../widget/auth/logoauth.dart';
 import '../../widget/auth/textsignup.dart';
-import '../home/personinformation.dart';
+import '../home/settings.dart';
+
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
@@ -21,15 +23,18 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(LoginControllerImp());
     return Scaffold(
-        backgroundColor: AppColor.black,
         appBar: AppBar(
-          backgroundColor: AppColor.black,
+          backgroundColor: AppColor.white,
+          systemOverlayStyle: const SystemUiOverlayStyle(
+            statusBarColor: AppColor.white,
+            statusBarIconBrightness: Brightness.dark,
+          ),
           title: Text(
             "signin".tr,
             style: Theme.of(context)
                 .textTheme
-                .headline1
-                ?.copyWith(color: AppColor.gray),
+                .displayLarge
+                ?.copyWith(color: AppColor.primaryColor),
           ),
           elevation: 0,
           centerTitle: true,

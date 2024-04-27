@@ -29,7 +29,7 @@ class CustomButtonAppBar extends StatelessWidget {
             iconData,
             color: isActive == true
                 ? AppColor.primaryColor
-                : AppColor.backgroundColor,
+                : AppColor.black,
           ),
           const SizedBox(
             height: 5,
@@ -40,7 +40,7 @@ class CustomButtonAppBar extends StatelessWidget {
                 fontSize: 11,
                 color: isActive == true
                     ? AppColor.primaryColor
-                    : AppColor.backgroundColor),
+                    : AppColor.black),
           )
         ],
       ),

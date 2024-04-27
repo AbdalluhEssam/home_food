@@ -11,6 +11,8 @@ class Assets {
   static const String cairoCairoSemiBold = 'assets/fonts/Cairo/Cairo-SemiBold.ttf';
   static const String imagesAvatar = 'assets/images/avatar.png';
   static const String imagesCash = 'assets/images/cash.png';
+  static const String imagesChefPana = 'assets/images/Chef-pana.png';
+  static const String imagesCover1 = 'assets/images/cover1.jpeg';
   static const String imagesCredit = 'assets/images/credit.png';
   static const String imagesDelivery = 'assets/images/delivery.png';
   static const String imagesDis = 'assets/images/dis.png';
