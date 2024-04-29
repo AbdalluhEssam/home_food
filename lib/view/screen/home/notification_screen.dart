@@ -30,11 +30,10 @@ class NotificationScreen extends GetView<NotificationControllerImp> {
                           borderRadius: BorderRadius.circular(10),
                           boxShadow: const [
                             BoxShadow(
-                                color: AppColor.primaryColor,
-                                blurRadius: 5)
+                                color: AppColor.gray,
+                                blurRadius: 8)
                           ]),
                       child: Card(
-
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 15, vertical: 10),
@@ -44,14 +43,14 @@ class NotificationScreen extends GetView<NotificationControllerImp> {
                                   flex: 2,
                                   child: Column(
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                           "${controller.notification[index].notificationTitle}",
                                           style: const TextStyle(
                                               fontSize: 14,
                                               color:
-                                                  AppColor.primaryColor)),
+                                              AppColor.primaryColor)),
                                       const SizedBox(
                                         height: 10,
                                       ),
@@ -65,7 +64,7 @@ class NotificationScreen extends GetView<NotificationControllerImp> {
                                 ),
                                 Text(
                                     Jiffy.parse(
-                                            "${DateTime.parse(controller.notification[index].createAt!)}")
+                                        "${DateTime.parse(controller.notification[index].createAt!)}")
                                         .fromNow(),
                                     style: const TextStyle(
                                         fontSize: 9,
@@ -75,7 +74,7 @@ class NotificationScreen extends GetView<NotificationControllerImp> {
                           )));
                 },
                 separatorBuilder: (BuildContext context, int index) =>
-                    const SizedBox(height: 15),
+                const SizedBox(height: 15),
               )),
         ));
   }

@@ -20,7 +20,7 @@ class Settings extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 0,
         systemOverlayStyle:
-            const SystemUiOverlayStyle(statusBarColor: AppColor.primaryColor),
+        const SystemUiOverlayStyle(statusBarColor: AppColor.primaryColor),
       ),
       body: ListView(
         children: [
@@ -49,7 +49,7 @@ class Settings extends StatelessWidget {
                           radius: 40,
                           backgroundColor: AppColor.backgroundColor,
                           backgroundImage:
-                              AssetImage(AppImageAssets.imageAvatar),
+                          AssetImage(AppImageAssets.imageAvatar),
                         ),
                       ),
                       const SizedBox(
@@ -67,7 +67,7 @@ class Settings extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Card(
-              color: AppColor.primaryColor.withOpacity(0.2),
+              color: AppColor.white.withOpacity(0.2),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -81,7 +81,7 @@ class Settings extends StatelessWidget {
                           context: context,
                           builder: (context) {
                             LocaleController controller =
-                                Get.put(LocaleController());
+                            Get.put(LocaleController());
                             return Container(
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 30, vertical: 10),
@@ -89,53 +89,57 @@ class Settings extends StatelessWidget {
                               child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                Text(
-                                  translateDataBase(
-                                      "تغير اللغة", "Change the language"),
-                                  style: const TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                                MaterialButton(
-                                  onPressed: () {
-                                    controller.changeLang("ar");
-                                    Get.forceAppUpdate();
-                                    Get.appUpdate();
-                                    Get.back();
-                                  },
-                                  textColor: AppColor.black,
-                                  color: AppColor.primaryColor,
-                                  minWidth: double.infinity,
-                                  child: Text(
-                                    translateDataBase(
-                                        "اللغة العربية", "Arabic"),
-                                    style: const TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                                MaterialButton(
-                                  onPressed: () {
-                                    controller.changeLang("en");
-                                    Get.forceAppUpdate();
-                                    Get.appUpdate();
-                                    Get.back();
-                                  },
-                                  textColor: AppColor.black,
-                                  color: AppColor.primaryColor,
-                                  minWidth: double.infinity,
-                                  child: Text(
-                                    translateDataBase(
-                                        "اللغة الانجليزية", "English"),
-                                    style: const TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                              ]),
+                                    Text(
+                                      translateDataBase(
+                                          "تغير اللغة", "Change the language"),
+                                      style: const TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    const SizedBox(
+                                      height: 20,
+                                    ),
+                                    MaterialButton(
+                                      onPressed: () {
+                                        controller.changeLang("ar");
+                                        Get.forceAppUpdate();
+                                        Get.appUpdate();
+                                        Get.back();
+                                      },
+                                      textColor: AppColor.black,
+                                      color: AppColor.primaryColor,
+                                      minWidth: double.infinity,
+                                      child: Text(
+                                        translateDataBase(
+                                            "اللغة العربية", "Arabic"),
+                                        style: const TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white
+                                        ),
+                                      ),
+                                    ),
+                                    MaterialButton(
+                                      onPressed: () {
+                                        controller.changeLang("en");
+                                        Get.forceAppUpdate();
+                                        Get.appUpdate();
+                                        Get.back();
+                                      },
+                                      textColor: AppColor.black,
+                                      color: AppColor.primaryColor,
+                                      minWidth: double.infinity,
+                                      child: Text(
+                                        translateDataBase(
+                                            "اللغة الانجليزية", "English"),
+                                        style: const TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white
+                                        ),
+                                      ),
+                                    ),
+                                  ]),
                             );
                           });
                       // Get.toNamed(AppRoute.language);
@@ -229,13 +233,13 @@ class Settings extends StatelessWidget {
               children: [
                 buildMedia(
                     icon: Icons.facebook,
-                    text: "Facebook",
+                    text: "Facebook".tr,
                     onPressed: () {
                       facebook();
                     }),
                 buildMedia(
                     icon: FontAwesome.whatsapp,
-                    text: "Whatsapp",
+                    text: "Whatsapp".tr,
                     onPressed: () {
                       whatsapp();
                     }),
@@ -274,8 +278,8 @@ webSite() async {
 
 Widget buildMedia(
     {required String text,
-    required IconData icon,
-    void Function()? onPressed}) {
+      required IconData icon,
+      void Function()? onPressed}) {
   const color = AppColor.primaryColor;
   return Container(
     padding: const EdgeInsets.symmetric(horizontal: 10),

@@ -5,31 +5,6 @@ import '../../../core/constant/color.dart';
 import '../../../core/functions/translatedordatabase.dart';
 import '../../../data/model/categories_model.dart';
 
-class ListCategoriesItems extends GetView<ItemsControllerImp> {
-  const ListCategoriesItems({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      height: size.height * 0.1,
-      child: ListView.separated(
-        scrollDirection: Axis.horizontal,
-        itemCount: controller.categories.length,
-        itemBuilder: ((context, index) {
-          return CategoriesHome(
-              i: index,
-              categoriesModel:
-                  CategoriesModel.fromJson(controller.categories[index]));
-        }),
-        separatorBuilder: (BuildContext context, int index) => const SizedBox(
-          width: 10,
-        ),
-      ),
-    );
-  }
-}
 
 class CategoriesHome extends GetView<ItemsControllerImp> {
   final CategoriesModel categoriesModel;

@@ -11,7 +11,7 @@ import '../../data/model/itemsmodel.dart';
 abstract class HomeController extends SearchMaxController {
   initialData();
   getData();
-  goToItems(List categories, int selectedCat, String catId);
+  goToItems(categories, int selectedCat, String catId);
 }
 
 class HomeControllerImp extends HomeController {

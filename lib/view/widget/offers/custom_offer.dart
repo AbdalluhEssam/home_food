@@ -12,17 +12,18 @@ class CustomListItemsOffers extends GetView<OffersControllerImp> {
   final List categories;
   final int i;
 
-  const CustomListItemsOffers( {
+  const CustomListItemsOffers({
     Key? key,
-    required this.categoriesModel,required this.i,required this.categories,
+    required this.categoriesModel,
+    required this.i,
+    required this.categories,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        controller.goToItems(
-            categories, i, categoriesModel.categoriesId!);
+        controller.goToItems(categoriesModel, i, categoriesModel.categoriesId!);
       },
       child: Card(
         child: Padding(
@@ -40,34 +41,50 @@ class CustomListItemsOffers extends GetView<OffersControllerImp> {
 
                         // fit: BoxFit.fill,
                       )),
-                  const SizedBox(width: 18,),
-                  Text(
-                    translateDataBase(
-                        categoriesModel.categoriesNameAr.toString(),
-                        categoriesModel.categoriesName.toString()),
-                    style: const TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 15),
+                  const SizedBox(
+                    width: 18,
                   ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Container(
-                      alignment: Alignment.bottomCenter,
-                      height: 22,
-                      child: Row(
-                        children: [
-                          ...List.generate(
-                              5,
-                              (index) => const Icon(
-                                    Icons.star,
-                                    size: 15,
-                                    color: AppColor.primaryColor,
-                                  )),
-                        ],
-                      ))
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        translateDataBase(
+                            categoriesModel.categoriesNameAr.toString(),
+                            categoriesModel.categoriesName.toString()),
+                        style: const TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 15),
+                      ),
+                      Text(
+                        translateDataBase(
+                            categoriesModel.governorateNameAr.toString(),
+                            categoriesModel.governorateNameEn.toString()),
+                        style: const TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 12),
+                      ),
+                      Text(
+                        translateDataBase(
+                            categoriesModel.addressStreet.toString(),
+                            categoriesModel.addressStreet.toString()),
+                        style: const TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 10,color: Colors.grey),
+                      ),
+                      Container(
+                          alignment: Alignment.bottomCenter,
+                          height: 22,
+                          child: Row(
+                            children: [
+                              ...List.generate(
+                                  5,
+                                  (index) => Icon(
+                                        Icons.star,
+                                        size: 15,
+                                        color: AppColor.primaryColor
+                                            .withOpacity(0.5),
+                                      )),
+                            ],
+                          ))
+                    ],
+                  ),
                 ],
               ),
             ],

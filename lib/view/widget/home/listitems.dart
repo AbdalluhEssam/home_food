@@ -37,7 +37,7 @@ class ItemsViewTopSelling extends GetView<HomeControllerImp> {
       itemCount: controller.itemsTopSelling.length,
       itemBuilder: ((context, index) => ListItemsView(
           itemsModel:
-              ItemsModel.fromJson(controller.itemsTopSelling[index]))),
+          ItemsModel.fromJson(controller.itemsTopSelling[index]))),
       separatorBuilder: (BuildContext context, int index) => const SizedBox(
         width: 5,
       ),
@@ -57,6 +57,7 @@ class ListItemsView extends GetView<HomeControllerImp> {
         controller.goToProductDetails(itemsModel);
       },
       child: Card(
+        color: Colors.white,
         child: Row(
           children: [
             //Image Section
@@ -64,8 +65,8 @@ class ListItemsView extends GetView<HomeControllerImp> {
               width: Dimensions.listViewImgSize,
               height: Dimensions.listViewImgSize,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(Dimensions.radius20),
-                  color: Colors.white38,
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(Dimensions.radius20),bottomLeft:Radius.circular(Dimensions.radius20) ),
+                  color: Colors.white,
                   image: DecorationImage(
                       fit: BoxFit.cover,
                       image: CachedNetworkImageProvider(
@@ -85,7 +86,7 @@ class ListItemsView extends GetView<HomeControllerImp> {
                     topRight: Radius.circular(Dimensions.radius20),
                     bottomRight: Radius.circular(Dimensions.radius20),
                   ),
-                  color: Colors.white,
+                  color: Colors.white38,
                 ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 5),
@@ -95,13 +96,13 @@ class ListItemsView extends GetView<HomeControllerImp> {
                     children: [
                       BigText(
                           text:
-                              "${translateDataBase(itemsModel.itemsNameAr, itemsModel.itemsName)}"),
+                          "${translateDataBase(itemsModel.itemsNameAr, itemsModel.itemsName)}"),
                       SizedBox(
                         height: Dimensions.height10,
                       ),
                       SmallText(
                           text:
-                              "${translateDataBase("بخصائص مصرية", " With Egypt Characteristics ")}"),
+                          "${translateDataBase("بخصائص مصرية", " With Egypt Characteristics ")}"),
                       const SizedBox(
                         height: 5,
                       ),
@@ -115,12 +116,12 @@ class ListItemsView extends GetView<HomeControllerImp> {
                           IconAndTextWidget(
                               icon: Icons.location_on,
                               text:
-                                  "${translateDataBase(" 1.7 كم", "1.7KM")}",
+                              "${translateDataBase(" 1.7 كم", "1.7KM")}",
                               iconColor: AppColor.mainColor),
                           IconAndTextWidget(
                               icon: Icons.access_time_filled_rounded,
                               text:
-                                  "${translateDataBase("35 دقيقه", "35min")}",
+                              "${translateDataBase("35 دقيقه", "35min")}",
                               iconColor: AppColor.iconColor2)
                         ],
                       )
@@ -144,10 +145,10 @@ class BigText extends StatelessWidget {
 
   BigText(
       {super.key,
-      this.color = const Color(0xFF000000),
-      required this.text,
-      this.size = 0,
-      this.overflow = TextOverflow.ellipsis});
+        this.color = const Color(0xFF000000),
+        required this.text,
+        this.size = 0,
+        this.overflow = TextOverflow.ellipsis});
 
   @override
   Widget build(BuildContext context) {
@@ -200,9 +201,9 @@ class IconAndTextWidget extends StatelessWidget {
 
   const IconAndTextWidget(
       {super.key,
-      required this.icon,
-      required this.text,
-      required this.iconColor});
+        required this.icon,
+        required this.text,
+        required this.iconColor});
 
   @override
   Widget build(BuildContext context) {
@@ -213,7 +214,7 @@ class IconAndTextWidget extends StatelessWidget {
           color: iconColor,
           size: Dimensions.iconSize24,
         ),
-        SizedBox(
+        const SizedBox(
           width: 5,
         ),
         SmallText(

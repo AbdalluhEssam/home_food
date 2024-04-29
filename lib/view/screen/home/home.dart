@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
         body: GetBuilder<HomeControllerImp>(
             builder: (controller) => Container(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                 child: ListView(
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     physics: const BouncingScrollPhysics(),
@@ -61,87 +61,87 @@ class _HomePageState extends State<HomePage> {
                       ),
                       !controller.isSearch == true
                           ? HandlingDataView(
-                              statusRequest: controller.statusRequest,
-                              widget: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  CarouselSlider(
-                                      items: controller.banner.map((imageUrl) {
-                                        return Container(
-                                          clipBehavior: Clip.hardEdge,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(10.0)),
-                                          child: CachedNetworkImage(
-                                              imageUrl:
-                                                  "${AppLink.imageBanner}/${imageUrl['banner_image']}",
-                                              width: double.infinity,
-                                              fit: BoxFit.fill),
-                                        );
-                                      }).toList(),
-                                      options: CarouselOptions(
-                                        viewportFraction: 1,
-                                        aspectRatio: 2.0,
-                                        initialPage: 2,
-                                        // height: size.height * 0.25,
-                                        enableInfiniteScroll: true,
-                                        reverse: false,
-                                        autoPlay: true,
-                                        autoPlayInterval:
-                                            const Duration(seconds: 3),
-                                        autoPlayAnimationDuration:
-                                            const Duration(milliseconds: 800),
-                                        autoPlayCurve: Curves.fastOutSlowIn,
-                                        enlargeCenterPage: true,
-                                        scrollDirection: Axis.horizontal,
-                                        onPageChanged: (index, _) {
-                                          setState(() {
-                                            currentIndex = index;
-                                          });
-                                        },
-                                      )),
-                                  // This trailing comma makes auto-formatting nicer for build methods.
-                                  const SizedBox(
-                                    height: 20,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: controller.banner.map((url) {
-                                      int index = controller.banner
-                                          .lastIndexOf(url)
-                                          .toInt();
-                                      // print(index);
-                                      return AnimatedContainer(
-                                        duration: const Duration(
-                                          milliseconds: 800,
-                                        ),
-                                        width: currentIndex == index ? 25 : 5,
-                                        height: 5,
-                                        margin: const EdgeInsets.symmetric(
-                                            horizontal: 2.0),
-                                        decoration: BoxDecoration(
+                          statusRequest: controller.statusRequest,
+                          widget: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              CarouselSlider(
+                                  items: controller.banner.map((imageUrl) {
+                                    return Container(
+                                      clipBehavior: Clip.hardEdge,
+                                      decoration: BoxDecoration(
                                           borderRadius:
-                                              BorderRadius.circular(5),
-                                          color: currentIndex == index
-                                              ? AppColor.primaryColor
-                                              : AppColor.gray,
-                                        ),
-                                      );
-                                    }).toList(),
-                                  ),
-                                  CustomTitleHome(title: "Chefs".tr),
-                                  const SizedBox(
+                                          BorderRadius.circular(10.0)),
+                                      child: CachedNetworkImage(
+                                          imageUrl:
+                                          "${AppLink.imageBanner}/${imageUrl['banner_image']}",
+                                          width: double.infinity,
+                                          fit: BoxFit.fill),
+                                    );
+                                  }).toList(),
+                                  options: CarouselOptions(
+                                    viewportFraction: 1,
+                                    aspectRatio: 2.0,
+                                    initialPage: 2,
+                                    // height: size.height * 0.25,
+                                    enableInfiniteScroll: true,
+                                    reverse: false,
+                                    autoPlay: true,
+                                    autoPlayInterval:
+                                    const Duration(seconds: 3),
+                                    autoPlayAnimationDuration:
+                                    const Duration(milliseconds: 800),
+                                    autoPlayCurve: Curves.fastOutSlowIn,
+                                    enlargeCenterPage: true,
+                                    scrollDirection: Axis.horizontal,
+                                    onPageChanged: (index, _) {
+                                      setState(() {
+                                        currentIndex = index;
+                                      });
+                                    },
+                                  )),
+                              // This trailing comma makes auto-formatting nicer for build methods.
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: controller.banner.map((url) {
+                                  int index = controller.banner
+                                      .lastIndexOf(url)
+                                      .toInt();
+                                  // print(index);
+                                  return AnimatedContainer(
+                                    duration: const Duration(
+                                      milliseconds: 800,
+                                    ),
+                                    width: currentIndex == index ? 25 : 5,
                                     height: 5,
-                                  ),
-                                  const ListCategoriesHome(),
-                                  if (controller.itemsTopSelling.isNotEmpty)
-                                    CustomTitleHome(title: "${translateDataBase("عروض اليوم", "Offer Day")}".tr),
-                                  if (controller.itemsTopSelling.isNotEmpty)
-                                    const ItemsViewTopSelling(),
-                                ],
-                              ))
+                                    margin: const EdgeInsets.symmetric(
+                                        horizontal: 2.0),
+                                    decoration: BoxDecoration(
+                                      borderRadius:
+                                      BorderRadius.circular(5),
+                                      color: currentIndex == index
+                                          ? AppColor.primaryColor
+                                          : AppColor.gray,
+                                    ),
+                                  );
+                                }).toList(),
+                              ),
+                              CustomTitleHome(title: "Chefs".tr),
+                              const SizedBox(
+                                height: 5,
+                              ),
+                              const ListCategoriesHome(),
+                              if (controller.itemsTopSelling.isNotEmpty)
+                                CustomTitleHome(title: "${translateDataBase("عروض اليوم", "Offer Daily")}".tr),
+                              if (controller.itemsTopSelling.isNotEmpty)
+                                const ItemsViewTopSelling(),
+                            ],
+                          ))
                           : ListItemsSearch(
-                              listData: controller.listDataControl)
+                          listData: controller.listDataControl)
                     ]))));
   }
 }
@@ -169,11 +169,11 @@ class ListItemsSearch extends GetView<HomeControllerImp> {
                 children: [
                   Expanded(
                       child: Hero(
-                    tag: "${listData[index].itemsId}",
-                    child: CachedNetworkImage(
-                        imageUrl:
+                        tag: "${listData[index].itemsId}",
+                        child: CachedNetworkImage(
+                            imageUrl:
                             "${AppLink.imageItems}/${listData[index].itemsImage}"),
-                  )),
+                      )),
                   Expanded(
                       flex: 2,
                       child: ListTile(

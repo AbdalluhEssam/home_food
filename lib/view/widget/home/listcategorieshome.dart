@@ -44,8 +44,7 @@ class CategoriesHome extends GetView<HomeControllerImp> {
 
     return InkWell(
         onTap: () {
-          controller.goToItems(
-              controller.categories, i!, categoriesModel.categoriesId!);
+          controller.goToItems(categoriesModel, i!, categoriesModel.categoriesId!);
         },
         child: Column(
           children: [

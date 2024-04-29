@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:home_food/data/model/categories_model.dart';
 import 'package:home_food/data/model/itemsmodel.dart';
 import '../../core/constant/routes.dart';
 import '../../core/functions/handlingdatacontroller.dart';
@@ -21,13 +22,13 @@ class ItemsControllerImp extends ItemsController {
 
   late StatusRequest statusRequest;
 
-  List categories = [];
   List items = [];
 
   int? selectedCat;
   String? catId;
   String? idUser;
   String? username;
+  late CategoriesModel categories;
 
   @override
   initialData() {
