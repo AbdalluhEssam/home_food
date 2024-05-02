@@ -1,6 +1,7 @@
 class AppLink {
 //================================== Hosting ===============================//
   static const String serverLink = "https://abdalluh-essam.com/homefood";
+  static const String serverLinkAdmin = "https://abdalluh-essam.com/homefood/admin";
 //================================== Image ===============================//
   static const String imageStatic = "$serverLink/upload";
   static const String imageServices = "$imageStatic/services";
@@ -57,5 +58,12 @@ class AppLink {
   static const String notification = "$serverLink/notification.php";
 //================================== OFFERS ===============================//
   static const String offers = "$serverLink/offers.php";
+
+//================================== ADMIN ===============================//
+  static const String addCategories       = "$serverLinkAdmin/categories/add.php";
+  static const String deleteCategories    = "$serverLinkAdmin/categories/delete.php";
+  static const String addProduct      = "$serverLinkAdmin/product/addproduct.php";
+  static const String deleteProduct      = "$serverLinkAdmin/product/deleteproduct.php";
+  static const String addBanner      = "$serverLinkAdmin/banner/addbanner.php";
 //================================== END ===============================//
 }

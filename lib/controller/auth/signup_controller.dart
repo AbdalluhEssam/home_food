@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../core/constant/routes.dart';
 
-
 import '../../core/class/statusrequest.dart';
 import '../../core/constant/color.dart';
 import '../../core/functions/handlingdatacontroller.dart';
@@ -30,20 +29,31 @@ class SignUpControllerImp extends SignUpController {
 
   bool isShowPassword = true;
 
+  List<Map<String, String>> permissions = [
+    {"2": "شيف"},
+    {"1": "مستخدم"},
+  ];
+  var userApprove;
+
   @override
   signUp() async {
     if (formstate.currentState!.validate()) {
       statusRequest = StatusRequest.loading;
       update();
       var response = await signupData.postData(
-          username.text.trimLeft().trimRight(), password.text.trimLeft().trimRight(), email.text.trimLeft().trimRight(), phone.text.trimLeft().trimRight());
+          username.text.trimLeft().trimRight(),
+          password.text.trimLeft().trimRight(),
+          email.text.trimLeft().trimRight(),
+          phone.text.trimLeft().trimRight(),
+          userApprove.toString()
+      );
       statusRequest = handlingData(response);
       if (StatusRequest.success == statusRequest) {
         if (response['status'] == "success") {
           Get.offNamed(AppRoute.verfiyCodeSignUp, arguments: {
             "email": email.text.trimLeft().trimRight(),
           });
-          Get.snackbar(username.text.toString(),"signupmass".tr,
+          Get.snackbar(username.text.toString(), "signupmass".tr,
               icon: const Icon(Icons.account_circle_rounded),
               barBlur: 2,
               margin: const EdgeInsets.symmetric(horizontal: 25),
@@ -51,10 +61,8 @@ class SignUpControllerImp extends SignUpController {
               isDismissible: true,
               duration: const Duration(seconds: 3),
               colorText: AppColor.black,
-              borderRadius: 80
-          );
+              borderRadius: 80);
           myServices.sharedPreferences.setString("emailup", email.text.toString());
-
         } else {
           Get.defaultDialog(
               title: "Warning",

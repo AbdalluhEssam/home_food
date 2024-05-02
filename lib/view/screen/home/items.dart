@@ -9,6 +9,8 @@ import '../../../controller/items/favorite_controller.dart';
 import '../../../controller/items/items_controller.dart';
 import '../../../core/constant/color.dart';
 import '../../../core/functions/translatedordatabase.dart';
+import '../../../core/functions/validinput.dart';
+import '../../widget/auth/customtextformauth.dart';
 import '../../widget/home/listitems.dart';
 import 'home.dart';
 
@@ -162,6 +164,211 @@ class ItemsView extends StatelessWidget {
           ),
         ],
       ),
+      floatingActionButton: GetBuilder<ItemsControllerImp>(
+        builder: (controller) => Visibility(
+          visible: controller.myServices.sharedPreferences.getString("admin") == "2" && controller.categories.usersId == controller.myServices.sharedPreferences.getString("id"),
+          child: FloatingActionButton(
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return Dialog(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      elevation: 0,
+                      backgroundColor: Colors.transparent,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.rectangle,
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                        child: SingleChildScrollView(
+                          child: Padding(
+                            padding: const EdgeInsets.all(12),
+                            child: Form(
+                              key: controller.formState,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisSize: MainAxisSize.min,
+                                children: <Widget>[
+                                  // Padding(
+                                  //   padding: const EdgeInsets.all(16.0),
+                                  //   child: Text(
+                                  //     '${translateDataBase("إضافة موظف", "Add Employee")}',
+                                  //     style: TextStyle(
+                                  //       fontSize: 20,
+                                  //       fontWeight: FontWeight.bold,
+                                  //     ),
+                                  //   ),
+                                  // ),
+                                  GetBuilder<ItemsControllerImp>(
+                                    builder: (controller) => InkWell(
+                                      onTap: () {
+                                        controller.imgGlr();
+                                        controller.update();
+                                      },
+                                      child: Container(
+                                        clipBehavior:
+                                        Clip.antiAliasWithSaveLayer,
+                                        decoration: const BoxDecoration(
+                                          color: Colors.grey,
+                                          shape: BoxShape.circle,
+                                        ),
+                                        width: 150,
+                                        height: 150,
+                                        child: Center(
+                                          child: controller.myFile == null
+                                              ? const Icon(
+                                              Icons.add_a_photo_outlined)
+                                              : Image.file(
+                                            controller.myFile!,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(height: 16),
+                                  CustomFormAdd(
+                                    isNamber: false,
+                                    valid: (val) {
+                                      return validInput(
+                                          val!, 3, 1000, "name");
+                                    },
+                                    mycontroller: controller.name,
+                                    label:
+                                    "${translateDataBase("الاسم بالانجليزى", "Name in English")}",
+                                    hinttext:
+                                    "${translateDataBase("الاسم بالانجليزى", "Name in English")}",
+                                    iconData: Icons.drive_file_rename_outline,
+                                  ),
+                                  // Add more TextFormField widgets for other fields like phone, etc.
+                                  const SizedBox(height: 8),
+                                  CustomFormAdd(
+                                    isNamber: false,
+                                    valid: (val) {
+                                      return validInput(
+                                          val!, 3, 1000, "name");
+                                    },
+                                    mycontroller: controller.nameAr,
+                                    label:
+                                    "${translateDataBase("الاسم بالعربي", "Name in Arabic")}",
+                                    hinttext:
+                                    "${translateDataBase("الاسم بالعربي", "Name in Arabic")}",
+                                    iconData: Icons.drive_file_rename_outline,
+                                  ),
+                                  const SizedBox(height: 8),
+                                  CustomFormAdd(
+                                    isNamber: false,
+                                    valid: (val) {
+                                      return validInput(
+                                          val!, 3, 10000, "Desc");
+                                    },
+                                    mycontroller: controller.itemsDesc,
+                                    label:
+                                    "${translateDataBase("الوصف بالانجليزى", "Description in English")}",
+                                    hinttext:
+                                    "${translateDataBase("الوصف بالانجليزى", "Description in English")}",
+                                    iconData: Icons.drive_file_rename_outline,
+                                  ),
+                                  const SizedBox(height: 8),
+                                  CustomFormAdd(
+                                    isNamber: false,
+                                    valid: (val) {
+                                      return validInput(
+                                          val!, 3, 10000, "Desc");
+                                    },
+                                    mycontroller: controller.itemsDescAr,
+                                    label:
+                                    "${translateDataBase("الوصف بالعربي", "Description in Arabic")}",
+                                    hinttext:
+                                    "${translateDataBase("الوصف بالعربي", "Description in Arabic")}",
+                                    iconData: Icons.drive_file_rename_outline,
+                                  ),
+                                  // Add more TextFormField widgets for other fields like phone, etc.
+                                  const SizedBox(height: 8),
+                                  CustomFormAdd(
+                                    isNamber: true,
+                                    valid: (val) {
+                                      return validInput(
+                                          val!, 1, 10000, "count");
+                                    },
+                                    mycontroller: controller.itemsDescount,
+                                    label:
+                                    "${translateDataBase("نسبة الخصم", "discount percentage")}",
+                                    hinttext:
+                                    "${translateDataBase("نسبة الخصم", "discount percentage")}",
+                                    iconData: Icons.numbers,
+                                  ),
+                                  const SizedBox(height: 8),
+                                  CustomFormAdd(
+                                    isNamber: true,
+                                    valid: (val) {
+                                      return validInput(
+                                          val!, 1, 10000, "itemsPrice");
+                                    },
+                                    mycontroller: controller.itemsPrice,
+                                    label:
+                                    "${translateDataBase("السعر", "Price")}",
+                                    hinttext:
+                                    "${translateDataBase("السعر", "Price")}",
+                                    iconData: Icons.price_check,
+                                  ),
+                                  // Add more TextFormField widgets for other fields like phone, etc.
+                                  GetBuilder<ItemsControllerImp>(
+                                    builder: (controller) => ListTile(
+                                        title: Text(
+                                            "${translateDataBase("اظهار للجميع", "Show to everyone")}"),
+                                        trailing: Switch(
+                                          value: controller.itemsActive,
+                                          onChanged: (value) {
+                                            controller.toggleActive();
+                                          },
+                                        )),
+                                  ),
+                                  const SizedBox(height: 16),
+                                  Row(
+                                    children: [
+                                      ElevatedButton(
+                                        onPressed: () {
+                                          // Add your logic to save employee data
+                                          controller.addData();
+                                        },
+                                        child: Text(
+                                            '${translateDataBase("اضافة", "Add")}'),
+                                      ),
+                                      const SizedBox(
+                                        width: 12,
+                                      ),
+                                      ElevatedButton(
+                                        onPressed: () {
+                                          // Add your logic to save employee data
+                                          Get.back();
+                                        },
+                                        child: Text(
+                                            '${translateDataBase("الغاء", "Cancel")}'),
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    );
+                  });
+            },
+            child: const Icon(
+              Icons.add,
+              color: Colors.white,
+            ),
+          ),
+        ),
+      ),
+
     );
   }
 }

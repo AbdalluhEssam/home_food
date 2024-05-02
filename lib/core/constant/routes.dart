@@ -40,4 +40,6 @@ class AppRoute {
   static const String ordersArchive = "/OrdersArchive";
   static const String ordersDetails = "/OrdersDetails";
   static const String notificationScreen = "/NotificationScreen";
+  static const String addChef = "/addChef";
+  static const String addressChefAdd = "/AddressChefAdd";
 }

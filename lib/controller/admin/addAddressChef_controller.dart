@@ -4,19 +4,19 @@ import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
+import 'package:home_food/core/constant/routes.dart';
 import 'package:home_food/data/model/address_model.dart';
 import '../../../core/constant/color.dart';
 import '../../../core/services/services.dart';
 import '../../../core/class/statusrequest.dart';
 import '../../../core/functions/handlingdatacontroller.dart';
 import '../../../data/datasource/remote/address_data.dart';
-import 'address_controller.dart';
 
-abstract class AddAddressController extends GetxController {
+abstract class AddAddressChefController extends GetxController {
   initialData();
 }
 
-class AddAddressControllerImp extends AddAddressController {
+class AddAddressChefControllerImp extends AddAddressChefController {
   GlobalKey<FormState> formState = GlobalKey<FormState>();
 
   MyServices myServices = Get.find();
@@ -126,11 +126,7 @@ class AddAddressControllerImp extends AddAddressController {
       statusRequest = handlingData(response);
       if (StatusRequest.success == statusRequest) {
         if (response['status'] == "success") {
-          AddressControllerImp controllerImp = Get.put(AddressControllerImp());
-          // CheckOutController controller = Get.put(CheckOutController());
-          controllerImp.getData();
-          // controller.getAddress();
-          Get.back();
+          Get.offAllNamed(AppRoute.mySplashScreen);
           Get.rawSnackbar(
               snackPosition: SnackPosition.TOP,
               title: "notice".tr,

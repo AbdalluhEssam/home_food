@@ -14,13 +14,11 @@ class VerfiyCodeSignUp extends StatelessWidget {
     Get.put(VerfiyCodeSignUpControllerImp());
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: AppColor.backgroundColor,
           title: Text(
             "verification".tr,
             style: Theme.of(context)
                 .textTheme
-                .headline1
-                ?.copyWith(color: AppColor.gray),
+                .displayLarge,
           ),
           elevation: 0,
           centerTitle: true,

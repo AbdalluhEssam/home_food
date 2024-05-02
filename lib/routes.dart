@@ -2,6 +2,8 @@ import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:home_food/test.dart';
 import 'package:home_food/view/screen/address/add.dart';
 import 'package:home_food/view/screen/address/view.dart';
+import 'package:home_food/view/screen/admin/addAddressChef.dart';
+import 'package:home_food/view/screen/admin/addChef.dart';
 import 'package:home_food/view/screen/auth/forgetpassword/forgetpassword.dart';
 import 'package:home_food/view/screen/auth/forgetpassword/resetpassword.dart';
 import 'package:home_food/view/screen/auth/forgetpassword/success_resetpassword.dart';
@@ -75,5 +77,7 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.ordersArchive, page: () => const OrdersArchive()),
   GetPage(name: AppRoute.ordersDetails, page: () => const OrdersDetails()),
   GetPage(name: AppRoute.notificationScreen, page: () => const NotificationScreen()),
+  GetPage(name: AppRoute.addChef, page: () => const AddChef()),
+  GetPage(name: AppRoute.addressChefAdd, page: () => const AddressChefAdd()),
 
 ];

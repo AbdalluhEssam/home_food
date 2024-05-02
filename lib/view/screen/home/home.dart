@@ -8,6 +8,7 @@ import 'package:home_food/data/model/itemsmodel.dart';
 import 'package:home_food/view/widget/home/listitems.dart';
 import '../../../controller/home/home_controller.dart';
 import '../../../core/class/handlingdataview.dart';
+import '../../../core/dimensions.dart';
 import '../../../core/functions/translatedordatabase.dart';
 import '../../../likeapi.dart';
 import '../../widget/home/customappbar.dart';
@@ -163,33 +164,80 @@ class ListItemsSearch extends GetView<HomeControllerImp> {
             controller.goToProductDetails(listData[index]);
           },
           child: Card(
-            child: Container(
-              padding: const EdgeInsets.all(10),
-              child: Row(
-                children: [
-                  Expanded(
-                      child: Hero(
-                        tag: "${listData[index].itemsId}",
-                        child: CachedNetworkImage(
-                            imageUrl:
-                            "${AppLink.imageItems}/${listData[index].itemsImage}"),
-                      )),
-                  Expanded(
-                      flex: 2,
-                      child: ListTile(
-                        title: Text(
-                          translateDataBase(
-                              listData[index].itemsNameAr.toString(),
-                              listData[index].itemsName.toString()),
-                          style: const TextStyle(
-                              color: AppColor.black),
-                        ),
-                        subtitle: Text("${listData[index].itemsPrice}",
-                            style: const TextStyle(
-                                color: AppColor.primaryColor)),
-                      )),
-                ],
-              ),
+            color: Colors.white,
+            child: Row(
+              children: [
+                //Image Section
+                Container(
+                  width: Dimensions.listViewImgSize,
+                  height: Dimensions.listViewImgSize,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(topLeft: Radius.circular(Dimensions.radius20),bottomLeft:Radius.circular(Dimensions.radius20) ),
+                      color: Colors.white,
+                      image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: CachedNetworkImageProvider(
+                              "${AppLink.imageItems}/${listData[index].itemsImage}"))),
+                  child: Banner(
+                    location: BannerLocation.topStart,
+                    message: "${translateDataBase("عرض اليوم", "Daily offers")}",
+                    color: AppColor.mainColor,
+                  ),
+                ),
+                //Text Container
+                Expanded(
+                  child: Container(
+                    height: Dimensions.listViewTextContSize,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(Dimensions.radius20),
+                        bottomRight: Radius.circular(Dimensions.radius20),
+                      ),
+                      color: Colors.white38,
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 5),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          BigText(
+                              text:
+                              "${translateDataBase(listData[index].itemsNameAr, listData[index].itemsName)}"),
+                          SizedBox(
+                            height: Dimensions.height10,
+                          ),
+                          SmallText(
+                              text:
+                              "${translateDataBase("بخصائص مصرية", " With Egypt Characteristics ")}"),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              IconAndTextWidget(
+                                  icon: Icons.circle_sharp,
+                                  text: "${translateDataBase("طبيعي", "Normal")}",
+                                  iconColor: AppColor.iconColor1),
+                              IconAndTextWidget(
+                                  icon: Icons.location_on,
+                                  text:
+                                  "${translateDataBase(" 1.7 كم", "1.7KM")}",
+                                  iconColor: AppColor.mainColor),
+                              IconAndTextWidget(
+                                  icon: Icons.access_time_filled_rounded,
+                                  text:
+                                  "${translateDataBase("35 دقيقه", "35min")}",
+                                  iconColor: AppColor.iconColor2)
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         );

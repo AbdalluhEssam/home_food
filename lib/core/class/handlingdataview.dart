@@ -76,8 +76,8 @@ class HandlingDataViewNot extends StatelessWidget {
                           children: [
                             Lottie.asset(
                               "assets/lottie/empty.json",
-                              width: Get.width * 0.8,
-                              height: Get.height * 0.5,
+                              width: Get.width,
+                              height: Get.height * 0.6,
                             ),
                             Text("cart".tr),
                           ],
@@ -118,7 +118,6 @@ class HandlingDataRequest extends StatelessWidget {
   }
 }
 
-
 class HandlingDataViewAddress extends StatelessWidget {
   final StatusRequest statusRequest;
   final Widget widget;
@@ -133,36 +132,36 @@ class HandlingDataViewAddress extends StatelessWidget {
   Widget build(BuildContext context) {
     return statusRequest == StatusRequest.loading
         ? Center(
-      child:
-      Lottie.asset(AppImageAssets.loading, width: 250, height: 250),
-    )
+            child:
+                Lottie.asset(AppImageAssets.loading, width: 250, height: 250),
+          )
         : statusRequest == StatusRequest.offlineFailure
-        ? Center(
-      child: Lottie.asset(AppImageAssets.offline,
-          width: 250, height: 250),
-    )
-        : statusRequest == StatusRequest.serverFailure
-        ? Center(
-      child: Lottie.asset(AppImageAssets.server,
-          width: 250, height: 250),
-    )
-        : statusRequest == StatusRequest.failure
-        ? Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Lottie.asset(
-            "assets/lottie/empty.json",
-            width: Get.width * 0.8,
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          const Text("لا يوجد عناوين"),
-        ],
-      ),
-    )
-        : widget;
+            ? Center(
+                child: Lottie.asset(AppImageAssets.offline,
+                    width: 250, height: 250),
+              )
+            : statusRequest == StatusRequest.serverFailure
+                ? Center(
+                    child: Lottie.asset(AppImageAssets.server,
+                        width: 250, height: 250),
+                  )
+                : statusRequest == StatusRequest.failure
+                    ? Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Lottie.asset(
+                              "assets/lottie/empty.json",
+                              width: Get.width * 0.8,
+                            ),
+                            const SizedBox(
+                              height: 30,
+                            ),
+                            const Text("لا يوجد عناوين"),
+                          ],
+                        ),
+                      )
+                    : widget;
   }
 }
