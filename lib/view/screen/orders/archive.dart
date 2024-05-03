@@ -8,6 +8,7 @@ import 'package:home_food/data/model/orders_model.dart';
 import 'package:home_food/view/widget/orders/dialograting.dart';
 
 import '../../../controller/orders/archive_controller.dart';
+import '../../../core/functions/translatedordatabase.dart';
 
 class OrdersArchive extends StatelessWidget {
   const OrdersArchive({super.key});
@@ -17,7 +18,7 @@ class OrdersArchive extends StatelessWidget {
     Get.put(OrdersArchiveController());
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Archive"),
+        title:  Text('${translateDataBase("الارشيف", "Archive")}'),
       ),
       body: Container(
         padding: const EdgeInsets.all(10),

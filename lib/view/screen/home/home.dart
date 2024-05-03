@@ -14,6 +14,7 @@ import '../../../likeapi.dart';
 import '../../widget/home/customappbar.dart';
 import '../../widget/home/customtitlehome.dart';
 import '../../widget/home/listcategorieshome.dart';
+import 'offers_screen.dart';
 
 int? currentIndex = 0;
 
@@ -130,7 +131,25 @@ class _HomePageState extends State<HomePage> {
                                   );
                                 }).toList(),
                               ),
-                              CustomTitleHome(title: "Chefs".tr),
+                               Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text('${translateDataBase("الشيفات", "Chefs")}',style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                  ),),
+                                  InkWell(
+                                    onTap: () {
+                                      Get.to(const OffersView());
+                                    },
+                                    child:  Text(
+                                      '${translateDataBase("عرض المزيد", "see all")}',
+                                      style: TextStyle(color: AppColor.primaryColor),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              //CustomTitleHome(title: "Chefs".tr),
                               const SizedBox(
                                 height: 5,
                               ),

@@ -102,14 +102,14 @@ class Login extends StatelessWidget {
                               child: Text(
                                 "forget".tr,
                                 textAlign: TextAlign.end,
-                                style: const TextStyle(color: AppColor.gray),
+                                style: const TextStyle(color: AppColor.primaryColor),
                               ),
                               onTap: () {
                                 controller.goToForgetPassword();
                               },
                             ),
                             const SizedBox(
-                              height: 20,
+                              height: 10,
                             ),
                             CustomButtonAuth(
                                 text: "signin".tr,

@@ -28,12 +28,16 @@ class CustomItemsCartList extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-              flex: 2,
+            flex: 2,
+            child: ClipRRect(
+              borderRadius: const BorderRadius.only(topLeft: Radius.circular(10),bottomLeft: Radius.circular(10)), // تحديد شكل الحدود هنا
               child: CachedNetworkImage(
                 imageUrl: imageUrl,
-                height: Get.width * 0.27,
+                height: Get.width * 0.30,
                 fit: BoxFit.cover,
-              )),
+              ),
+            ),
+          ),
           Expanded(
               flex: 3,
               child: ListTile(

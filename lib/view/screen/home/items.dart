@@ -42,7 +42,7 @@ class ItemsView extends StatelessWidget {
                       Align(
                         alignment: AlignmentDirectional.topStart,
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 20),
+                          padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 25),
                           child: IconButton(
                             icon: const Icon(Icons.arrow_back_ios),
                             onPressed: () {

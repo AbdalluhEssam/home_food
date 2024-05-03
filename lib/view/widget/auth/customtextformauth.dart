@@ -46,7 +46,7 @@ class CustomFormAuth extends StatelessWidget {
               fontSize: 14,
               fontWeight: FontWeight.bold),
           hintStyle: const TextStyle(
-              color: AppColor.primaryColor,
+              color: AppColor.gray,
               fontSize: 14,
               fontWeight: FontWeight.bold),
           border: const OutlineInputBorder(
@@ -118,7 +118,7 @@ class CustomFormAdd extends StatelessWidget {
         contentPadding:
         const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
         labelStyle: const TextStyle(
-            color: AppColor.gray, fontSize: 14, fontWeight: FontWeight.bold),
+            color: AppColor.gray, fontSize: 14, fontWeight: FontWeight.w400),
         border: const OutlineInputBorder(
             borderSide: BorderSide(color: AppColor.backgroundColor, width: 1),
             borderRadius: BorderRadius.all(Radius.circular(50))),

@@ -16,7 +16,7 @@ class AddressAdd extends StatelessWidget {
     AddAddressControllerImp controller = Get.put(AddAddressControllerImp());
     return Scaffold(
         appBar: AppBar(
-          title: Text("addaddress".tr),
+          title: Text('${translateDataBase("أضافة عنوان جديد", "add address")}'),
           centerTitle: true,
         ),
         // floatingActionButton: FloatingActionButton(
@@ -90,7 +90,7 @@ class AddressAdd extends StatelessWidget {
                                   onPressed: () {
                                     controller.updateLocation();
                                   },
-                                  icon: const Icon(Icons.location_on_outlined)),
+                                  icon: const Icon(Icons.location_on_outlined,color: AppColor.white,)),
                             ),
                             Text("click".tr),
                           ],
@@ -131,7 +131,7 @@ class AddressAdd extends StatelessWidget {
                             alignment: Alignment.center,
                             borderRadius: BorderRadius.circular(20),
                             icon: const Icon(
-                              Icons.location_city,
+                              Icons.location_on,
                               color: AppColor.primaryColor,
                             ),
                             hint: Text(

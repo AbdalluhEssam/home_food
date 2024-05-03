@@ -4,6 +4,7 @@ import 'package:jiffy/jiffy.dart' show Jiffy;
 import '../../../../controller/home/notification_controller.dart';
 import '../../../../core/class/handlingdataview.dart';
 import '../../../core/constant/color.dart';
+import '../../../core/functions/translatedordatabase.dart';
 
 class NotificationScreen extends GetView<NotificationControllerImp> {
   const NotificationScreen({super.key});
@@ -14,7 +15,7 @@ class NotificationScreen extends GetView<NotificationControllerImp> {
     return Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          title: const Text("Notification"),
+          title:  Text('${translateDataBase("الاشعارات", "Notification")}'),
           centerTitle: true,
         ),
         body: GetBuilder<NotificationControllerImp>(

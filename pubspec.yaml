@@ -76,7 +76,7 @@ dependencies:
   curved_navigation_bar: ^1.0.3
   status_change: ^2.0.0
   carousel_slider: ^4.1.1
-  flutter_launcher_icons: ^0.10.0
+  flutter_launcher_icons: ^0.13.1
   rating_dialog: ^2.0.4
   intro_screen_onboarding_flutter: ^1.0.0
   image_picker: ^1.0.7
@@ -91,6 +91,12 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/large.png"
+  min_sdk_android: 21
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your

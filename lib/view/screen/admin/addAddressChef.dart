@@ -123,7 +123,7 @@ class AddressChefAdd extends StatelessWidget {
                             style: const TextStyle(
                               color: AppColor.black,
                               fontSize: 18,
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w400,
                             ),
                             menuMaxHeight: Get.height * 0.3,
                             isExpanded: true,
@@ -131,7 +131,7 @@ class AddressChefAdd extends StatelessWidget {
                             alignment: Alignment.center,
                             borderRadius: BorderRadius.circular(20),
                             icon: const Icon(
-                              Icons.location_city,
+                              Icons.location_on,
                               color: AppColor.primaryColor,
                             ),
                             hint: Text(

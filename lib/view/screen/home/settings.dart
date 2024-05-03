@@ -172,7 +172,7 @@ class Settings extends StatelessWidget {
                   ),
                   ListTile(
                     title: Text(
-                      "Archive".tr,
+                      '${translateDataBase("الارشيف", "Archive")}',
                       style: const TextStyle(color: AppColor.black),
                     ),
                     onTap: () {

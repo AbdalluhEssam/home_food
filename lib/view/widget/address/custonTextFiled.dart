@@ -32,7 +32,7 @@ class CustomFormAddress extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 10),
       child: TextFormField(
         cursorColor: AppColor.primaryColor,
-        style: const TextStyle(color: AppColor.primaryColor),
+        style: const TextStyle(color: AppColor.black),
         keyboardType: isNamber
             ? const TextInputType.numberWithOptions(decimal: true)
             : TextInputType.text,
@@ -49,9 +49,9 @@ class CustomFormAddress extends StatelessWidget {
               fontSize: 14,
               fontWeight: FontWeight.bold),
           hintStyle: const TextStyle(
-              color: AppColor.black,
+              color: AppColor.gray,
               fontSize: 14,
-              fontWeight: FontWeight.bold),
+              fontWeight: FontWeight.w400),
           border: const OutlineInputBorder(
               borderSide: BorderSide(color: AppColor.primaryColor, width: 1),
               borderRadius: BorderRadius.all(Radius.circular(30))),

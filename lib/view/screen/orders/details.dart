@@ -5,6 +5,7 @@ import 'package:home_food/core/constant/color.dart';
 
 import '../../../controller/orders/orderdetails_controller.dart';
 import '../../../core/class/handlingdataview.dart';
+import '../../../core/functions/translatedordatabase.dart';
 
 class OrdersDetails extends StatelessWidget {
   const OrdersDetails({super.key});
@@ -12,7 +13,7 @@ class OrdersDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Orders Details")),
+      appBar: AppBar(title:  Text('${translateDataBase("تفاصيل الطلبات", "Orders Details")}')),
       body: GetBuilder<OrderDetailsViewControllerImp>(
           init: Get.put(OrderDetailsViewControllerImp()),
           builder: (controller) => HandlingDataViewNot(
@@ -31,9 +32,9 @@ class OrdersDetails extends StatelessWidget {
                           children: [
                             Table(
                               children: [
-                                const TableRow(children: [
+                                 TableRow(children: [
                                   Text(
-                                    "Product",
+                                    '${translateDataBase("المنتج", "Product")}',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         color: AppColor.primaryColor,
@@ -41,7 +42,7 @@ class OrdersDetails extends StatelessWidget {
                                         fontSize: 18),
                                   ),
                                   Text(
-                                    "QTY",
+                                    '${translateDataBase("الكمية", "QTY")}',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         color: AppColor.primaryColor,
@@ -49,7 +50,7 @@ class OrdersDetails extends StatelessWidget {
                                         fontSize: 18),
                                   ),
                                   Text(
-                                    "Price",
+                                    '${translateDataBase("سعر", "Price")}',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         color: AppColor.primaryColor,
@@ -81,7 +82,7 @@ class OrdersDetails extends StatelessWidget {
                               height: 8,
                             ),
                             Text(
-                                "Total Price : ${controller.ordersModel.ordersTotalprice} EG",
+                                "${translateDataBase("الاجمالي", "Total Price")} : ${controller.ordersModel.ordersTotalprice} ${translateDataBase("حنيه مصري", "EG")}",
                                 textAlign: TextAlign.center,
                                 style: const TextStyle(
                                     color: AppColor.primaryColor,
@@ -92,7 +93,7 @@ class OrdersDetails extends StatelessWidget {
                     ),
                     if (controller.ordersModel.ordersType == "0")
                       Card(
-                        color: AppColor.black.withOpacity(0.5),
+                        color: AppColor.white.withOpacity(0.5),
                         shadowColor: AppColor.primaryColor,
                         child: ListTile(
                           titleTextStyle: const TextStyle(
@@ -101,7 +102,7 @@ class OrdersDetails extends StatelessWidget {
                               fontWeight: FontWeight.bold),
                           subtitleTextStyle:
                               const TextStyle(color: AppColor.white),
-                          title: const Text("Shipping Address"),
+                          title:  Text('${translateDataBase("عنوان الشحن", "Shipping Address")}'),
                           subtitle: Text(
                               "${controller.ordersModel.addressName}  ${controller.ordersModel.addressStreet}"),
                         ),

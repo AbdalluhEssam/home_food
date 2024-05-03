@@ -7,6 +7,8 @@ import 'package:home_food/core/constant/color.dart';
 import 'package:home_food/core/constant/routes.dart';
 import 'package:home_food/data/model/orders_model.dart';
 
+import '../../../core/functions/translatedordatabase.dart';
+
 class OrdersPending extends StatelessWidget {
   const OrdersPending({super.key});
 
@@ -15,7 +17,7 @@ class OrdersPending extends StatelessWidget {
     Get.put(OrdersPendingController());
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Orders"),
+        title:  Text('${translateDataBase("الطلبات", "Orders")}'),
       ),
       body: Container(
         padding: const EdgeInsets.all(10),
@@ -70,14 +72,14 @@ class CardListOrders extends GetView<OrdersPendingController> {
             ),
             const Divider(),
             Text(
-                "Order Type : ${ordersModel.ordersType == "0" ? "Delivery" : "Receive"}"),
-            Text("Order Price : ${ordersModel.ordersPrice} EG"),
-            Text("Delivery Price : ${ordersModel.ordersPricedelivery} EG"),
+                "${translateDataBase("نوع الطلب", "Order Type")} : ${ordersModel.ordersType == "0" ? "${translateDataBase("توصيل", "Delivery")}" : "${translateDataBase("يستلم", "Receive")}"}"),
+            Text("${translateDataBase("سعر الطلب", "Order Price")} : ${ordersModel.ordersPrice} ${translateDataBase("جنيه مصري", "EG")}"),
+            Text("${translateDataBase("سعر تسليم", "Delivery Price")} : ${ordersModel.ordersPricedelivery} ${translateDataBase("جنيه مصري", "EG")}"),
             Text(
-                "Payment Method : ${ordersModel.ordersPaymentmethod == "0" ? "Cash" : "Payment Card"}"),
+                "${translateDataBase("طريقة الدفع او السداد", "Payment Method")} : ${ordersModel.ordersPaymentmethod == "0" ? "${translateDataBase("نقدي", "Cash")}" : "${translateDataBase("بطاقة الدفع", "Payment Card")}"}"),
             Row(
               children: [
-                const Text("Order Status : "),
+                Text("${translateDataBase("حالة الطلب", "Order Status")} : "),
                 Container(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
@@ -108,7 +110,7 @@ class CardListOrders extends GetView<OrdersPendingController> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Total Price : ${ordersModel.ordersTotalprice} EG",
+                  "${translateDataBase("الاجمالي", "Total Price")} : ${ordersModel.ordersTotalprice} ${translateDataBase("جنيه مصري", "EG")}",
                   style: const TextStyle(
                       color: AppColor.primaryColor,
                       fontSize: 18,
@@ -121,7 +123,7 @@ class CardListOrders extends GetView<OrdersPendingController> {
                   },
                   color: AppColor.primaryColor,
                   textColor: AppColor.backgroundColor,
-                  child: const Text("Order Details"),
+                  child:  Text("${translateDataBase("تفاصيل الطلب", "Order Details")}"),
                 )
               ],
             )

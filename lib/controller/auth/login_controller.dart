@@ -67,7 +67,7 @@ class LoginControllerImp extends LoginController {
             myServices.sharedPreferences
                 .setString("phone", response['data']['users_phone']);
             myServices.sharedPreferences.setString("step", "2");
-            if(response['data']['admin'] == "1"){
+            if(response['data']['admin'] == "1" || response['data']['admin'] == "0"){
               Get.offNamed(AppRoute.homeScreen);
             }else if(response['data']['admin'] == "2"){
               Get.offNamed(AppRoute.addChef);

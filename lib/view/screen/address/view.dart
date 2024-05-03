@@ -19,10 +19,11 @@ class AddressView extends StatelessWidget {
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
+          backgroundColor: AppColor.primaryColor,
           onPressed: () {
             Get.toNamed(AppRoute.addressAdd);
           },
-          child: const Icon(Icons.add),
+          child: const Icon(Icons.add,color: AppColor.white,),
         ),
         body: GetBuilder<AddressControllerImp>(
             builder: (controller) => HandlingDataViewAddress(
@@ -176,11 +177,11 @@ class ListItemsAddress extends GetView<AddressControllerImp> {
                           },
                           child: Container(
                             width: double.infinity,
-                            color: AppColor.primaryColor.withOpacity(0.2),
+                            color: AppColor.gray.withOpacity(0.2),
                             // alignment: Alignment.center,
                             child: const Icon(
                               Icons.delete,
-                              color: AppColor.black,
+                              color: AppColor.primaryColor,
                             ),
                           ),
                         ),

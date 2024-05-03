@@ -49,7 +49,7 @@ class CustomListItems extends GetView<ItemsControllerImp> {
                     topRight: Radius.circular(Dimensions.radius20),
                     bottomRight: Radius.circular(Dimensions.radius20),
                   ),
-                  color: Colors.white,
+                  color: Colors.white38,
                 ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 5),

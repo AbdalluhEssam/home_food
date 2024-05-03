@@ -134,7 +134,7 @@ class SignUp extends StatelessWidget {
                                           String text = e.values.first;
                                           return DropdownMenuItem<String>(
                                             value: value,
-                                            child: Text(text),
+                                            child: Text(text.tr),
                                           );
                                         }).toList(),
                                         onChanged: (String? val) {

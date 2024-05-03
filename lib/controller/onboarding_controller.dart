@@ -24,7 +24,7 @@ class OnBoardingControllerImp extends OnBoardingController {
       imageHeight: 300,
       title: 'Give your home a makeover',
       subTitle: 'the best services that you cloud find for your home , as we have everything that you are in need',
-      imageUrl: AppImageAssets.onBoardingImageKodixaLogo,
+      imageUrl: AppImageAssets.onBoardingImageQuality,
     ),
     Introduction(
       titleTextStyle:
@@ -36,7 +36,7 @@ class OnBoardingControllerImp extends OnBoardingController {
       imageHeight: 300,
       title: 'easy and fast services',
       subTitle: 'include all types of service provider from construction to renovation',
-      imageUrl: AppImageAssets.onBoardingImageKodixaLogo,
+      imageUrl: AppImageAssets.onBoardingImageOk,
     ),
     Introduction(
       titleTextStyle:
@@ -48,7 +48,7 @@ class OnBoardingControllerImp extends OnBoardingController {
       imageHeight: 300,
       title: 'Feel fresh and relax',
       subTitle: 'search from a list of qualified professionals around you as we bring the best ones for you',
-      imageUrl: AppImageAssets.onBoardingImageKodixaLogo,
+      imageUrl: AppImageAssets.onBoardingImageGlu,
     ),
   ];
 

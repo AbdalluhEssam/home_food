@@ -26,9 +26,9 @@ class PriceAndCountItems extends StatelessWidget {
               alignment: Alignment.center,
               width: 50,
               padding: const EdgeInsets.only(bottom: 3),
-              decoration: BoxDecoration(
-                  border: Border.all(color: AppColor.primaryColor)
-              ),
+              // decoration: BoxDecoration(
+              //     border: Border.all(color: AppColor.primaryColor)
+              // ),
               child: Text(count!,style: const TextStyle(fontSize: 20, height: 1.3),),
             ),
             IconButton(
@@ -55,7 +55,7 @@ class PriceAndCountItems extends StatelessWidget {
               "$price EG",
               style: const TextStyle(
                   decoration: TextDecoration.lineThrough,
-                  color: AppColor.primaryColor,
+                  color: AppColor.gray,
                   fontWeight: FontWeight.bold,
                   fontSize: 16,height: 0.9),
             ),
