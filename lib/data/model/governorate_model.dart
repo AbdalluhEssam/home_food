@@ -11,10 +11,10 @@ class GovernoratesModel {
         this.delivery});
 
   GovernoratesModel.fromJson(Map<String, dynamic> json) {
-    governorateId = json['governorate_id'];
-    governorateNameAr = json['governorate_name_ar'];
-    governorateNameEn = json['governorate_name_en'];
-    delivery = json['delivery'];
+    governorateId = json['governorate_id'].toString();
+    governorateNameAr = json['governorate_name_ar'].toString();
+    governorateNameEn = json['governorate_name_en'].toString();
+    delivery = json['delivery'].toString();
   }
 
   Map<String, dynamic> toJson() {

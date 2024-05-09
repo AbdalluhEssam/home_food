@@ -1,14 +1,14 @@
 class BannerModel {
-  int? bannerId;
+  String? bannerId;
   String? bannerName;
   String? bannerImage;
 
   BannerModel({this.bannerId, this.bannerName, this.bannerImage});
 
   BannerModel.fromJson(Map<String, dynamic> json) {
-    bannerId = json['banner_id'];
-    bannerName = json['banner_name'];
-    bannerImage = json['banner_image'];
+    bannerId = json['banner_id'].toString();
+    bannerName = json['banner_name'].toString();
+    bannerImage = json['banner_image'].toString();
   }
 
   Map<String, dynamic> toJson() {

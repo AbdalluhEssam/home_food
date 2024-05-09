@@ -25,17 +25,17 @@ class AddressModel {
         this.delivery});
 
   AddressModel.fromJson(Map<String, dynamic> json) {
-    addressId = json['address_id'];
-    addressUsersid = json['address_usersid'];
-    addressName = json['address_name'];
-    addressCityid = json['address_cityid'];
-    addressStreet = json['address_street'];
-    addressLat = json['address_lat'];
-    addressLong = json['address_long'];
-    governorateId = json['governorate_id'];
-    governorateNameAr = json['governorate_name_ar'];
-    governorateNameEn = json['governorate_name_en'];
-    delivery = json['delivery'];
+    addressId = json['address_id'].toString();
+    addressUsersid = json['address_usersid'].toString();
+    addressName = json['address_name'].toString();
+    addressCityid = json['address_cityid'].toString();
+    addressStreet = json['address_street'].toString();
+    addressLat = json['address_lat'].toString();
+    addressLong = json['address_long'].toString();
+    governorateId = json['governorate_id'].toString();
+    governorateNameAr = json['governorate_name_ar'].toString();
+    governorateNameEn = json['governorate_name_en'].toString();
+    delivery = json['delivery'].toString();
   }
 
   Map<String, dynamic> toJson() {

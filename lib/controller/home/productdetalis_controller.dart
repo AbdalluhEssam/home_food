@@ -129,10 +129,9 @@ class ProductDetailsControllerImp extends ProductDetailsController {
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == "success") {
         int count = 0;
-        count = int.parse(response['data']);
+        count = int.parse(response['data'].toString());
         if (kDebugMode) {
-          print(
-              "////////////////////////////////////////$count/////////////////");
+          print("////////////////////////////////////////$count/////////////////");
         }
         return count;
         // items.addAll(response['data']);

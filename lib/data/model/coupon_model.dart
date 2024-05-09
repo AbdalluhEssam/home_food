@@ -13,11 +13,11 @@ class CouponModel {
         this.couponExpiredate});
 
   CouponModel.fromJson(Map<String, dynamic> json) {
-    couponId = json['coupon_id'];
-    couponName = json['coupon_name'];
-    couponCount = json['coupon_count'];
-    couponDiscount = json['coupon_discount'];
-    couponExpiredate = json['coupon_expiredate'];
+    couponId = json['coupon_id'].toString();
+    couponName = json['coupon_name'].toString();
+    couponCount = json['coupon_count'].toString();
+    couponDiscount = json['coupon_discount'].toString();
+    couponExpiredate = json['coupon_expiredate'].toString();
   }
 
   Map<String, dynamic> toJson() {

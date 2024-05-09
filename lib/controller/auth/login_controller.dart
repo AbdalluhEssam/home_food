@@ -55,7 +55,7 @@ class LoginControllerImp extends LoginController {
       statusRequest = handlingData(response);
       if (StatusRequest.success == statusRequest) {
         if (response['status'] == "success") {
-          if(response['data']['users_approve'] == "1"){
+          if(response['data']['users_approve'].toString() == "1"){
             myServices.sharedPreferences
                 .setString("id", response['data']['users_id'].toString());
             myServices.sharedPreferences.setString("admin", response['data']['admin'].toString());
@@ -67,9 +67,9 @@ class LoginControllerImp extends LoginController {
             myServices.sharedPreferences
                 .setString("phone", response['data']['users_phone']);
             myServices.sharedPreferences.setString("step", "2");
-            if(response['data']['admin'] == "1" || response['data']['admin'] == "0"){
+            if(response['data']['admin'].toString() == "1" || response['data']['admin'].toString() == "0"){
               Get.offNamed(AppRoute.homeScreen);
-            }else if(response['data']['admin'] == "2"){
+            }else if(response['data']['admin'].toString() == "2"){
               Get.offNamed(AppRoute.addChef);
             }
 

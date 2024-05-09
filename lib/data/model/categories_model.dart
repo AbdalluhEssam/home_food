@@ -51,30 +51,30 @@ class CategoriesModel {
         this.delivery});
 
   CategoriesModel.fromJson(Map<String, dynamic> json) {
-    categoriesId = json['categories_id'];
-    categoriesName = json['categories_name'];
-    categoriesNameAr = json['categories_name_ar'];
-    categoriesImage = json['categories_image'];
-    categoriesDatetime = json['categories_datetime'];
-    usersId = json['users_id'];
-    usersName = json['users_name'];
-    usersEmail = json['users_email'];
-    usersPassword = json['users_password'];
-    usersPhone = json['users_phone'];
-    usersVerfiycode = json['users_verfiycode'];
-    usersApprove = json['users_approve'];
-    usersCreate = json['users_create'];
-    addressId = json['address_id'];
-    addressUsersid = json['address_usersid'];
-    addressName = json['address_name'];
-    addressCityid = json['address_cityid'];
-    addressStreet = json['address_street'];
-    addressLat = json['address_lat'];
-    addressLong = json['address_long'];
-    governorateId = json['governorate_id'];
-    governorateNameAr = json['governorate_name_ar'];
-    governorateNameEn = json['governorate_name_en'];
-    delivery = json['delivery'];
+    categoriesId = json['categories_id'].toString();
+    categoriesName = json['categories_name'].toString();
+    categoriesNameAr = json['categories_name_ar'].toString();
+    categoriesImage = json['categories_image'].toString();
+    categoriesDatetime = json['categories_datetime'].toString();
+    usersId = json['users_id'].toString();
+    usersName = json['users_name'].toString();
+    usersEmail = json['users_email'].toString();
+    usersPassword = json['users_password'].toString();
+    usersPhone = json['users_phone'].toString();
+    usersVerfiycode = json['users_verfiycode'].toString();
+    usersApprove = json['users_approve'].toString();
+    usersCreate = json['users_create'].toString();
+    addressId = json['address_id'].toString();
+    addressUsersid = json['address_usersid'].toString();
+    addressName = json['address_name'].toString();
+    addressCityid = json['address_cityid'].toString();
+    addressStreet = json['address_street'].toString();
+    addressLat = json['address_lat'].toString();
+    addressLong = json['address_long'].toString();
+    governorateId = json['governorate_id'].toString();
+    governorateNameAr = json['governorate_name_ar'].toString();
+    governorateNameEn = json['governorate_name_en'].toString();
+    delivery = json['delivery'].toString();
   }
 
   Map<String, dynamic> toJson() {

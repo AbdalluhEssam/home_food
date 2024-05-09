@@ -43,26 +43,26 @@ class OrdersModel {
       this.addressLong});
 
   OrdersModel.fromJson(Map<String, dynamic> json) {
-    ordersId = json['orders_id'];
-    ordersUsersid = json['orders_usersid'];
-    ordersAddressid = json['orders_addressid'];
-    ordersType = json['orders_type'];
-    ordersPricedelivery = json['orders_pricedelivery'];
-    ordersPrice = json['orders_price'];
-    ordersNote = json['orders_noterating'];
-    ordersRating = json['orders_rating'];
-    ordersTotalprice = json['orders_totalprice'];
-    ordersCoupon = json['orders_coupon'];
-    ordersPaymentmethod = json['orders_paymentmethod'];
-    ordersStatus = json['orders_status'];
-    ordersTime = json['orders_time'];
-    addressId = json['address_id'];
-    addressUsersid = json['address_usersid'];
-    addressName = json['address_name'];
-    addressCityid = json['address_cityid'];
-    addressStreet = json['address_street'];
-    addressLat = json['address_lat'];
-    addressLong = json['address_long'];
+    ordersId = json['orders_id'].toString();
+    ordersUsersid = json['orders_usersid'].toString();
+    ordersAddressid = json['orders_addressid'].toString();
+    ordersType = json['orders_type'].toString();
+    ordersPricedelivery = json['orders_pricedelivery'].toString();
+    ordersPrice = json['orders_price'].toString();
+    ordersNote = json['orders_noterating'].toString();
+    ordersRating = json['orders_rating'].toString();
+    ordersTotalprice = json['orders_totalprice'].toString();
+    ordersCoupon = json['orders_coupon'].toString();
+    ordersPaymentmethod = json['orders_paymentmethod'].toString();
+    ordersStatus = json['orders_status'].toString();
+    ordersTime = json['orders_time'].toString();
+    addressId = json['address_id'].toString();
+    addressUsersid = json['address_usersid'].toString();
+    addressName = json['address_name'].toString();
+    addressCityid = json['address_cityid'].toString();
+    addressStreet = json['address_street'].toString();
+    addressLat = json['address_lat'].toString();
+    addressLong = json['address_long'].toString();
   }
 
   Map<String, dynamic> toJson() {
@@ -132,24 +132,24 @@ class OrdersDetailsModel {
       this.itemsCat});
 
   OrdersDetailsModel.fromJson(Map<String, dynamic> json) {
-    itemsprice = json['itemsprice'];
-    countitems = json['countitems'];
-    cartId = json['cart_id'];
-    cartItemsId = json['cart_items_id'];
-    userId = json['user_id'];
-    cartOrders = json['cart_orders'];
-    itemsId = json['items_id'];
-    itemsName = json['items_name'];
-    itemsNameAr = json['items_name_ar'];
-    itemsDesc = json['items_desc'];
-    itemsDescAr = json['items_desc_ar'];
-    itemsImage = json['items_image'];
-    itemsCount = json['items_count'];
-    itemsActive = json['items_active'];
-    itemsPrice = json['items_price'];
-    itemsDescount = json['items_descount'];
-    itemsDate = json['items_date'];
-    itemsCat = json['items_cat'];
+    itemsprice = json['itemsprice'].toString();
+    countitems = json['countitems'].toString();
+    cartId = json['cart_id'].toString();
+    cartItemsId = json['cart_items_id'].toString();
+    userId = json['user_id'].toString();
+    cartOrders = json['cart_orders'].toString();
+    itemsId = json['items_id'].toString();
+    itemsName = json['items_name'].toString();
+    itemsNameAr = json['items_name_ar'].toString();
+    itemsDesc = json['items_desc'].toString();
+    itemsDescAr = json['items_desc_ar'].toString();
+    itemsImage = json['items_image'].toString();
+    itemsCount = json['items_count'].toString();
+    itemsActive = json['items_active'].toString();
+    itemsPrice = json['items_price'].toString();
+    itemsDescount = json['items_descount'].toString();
+    itemsDate = json['items_date'].toString();
+    itemsCat = json['items_cat'].toString();
   }
 
   Map<String, dynamic> toJson() {

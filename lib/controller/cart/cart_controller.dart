@@ -198,8 +198,8 @@ class CartControllerImp extends CartController {
         Map countPrice = response['countprice'];
         List dataCart = response['cart'];
         cart.addAll(dataCart.map((e) => CartModel.fromJson(e)));
-        totalCountItems = int.parse(countPrice['totalcount']);
-        priceOrder = double.parse(countPrice['totalprice']);
+        totalCountItems = int.parse(countPrice['totalcount'].toString());
+        priceOrder = double.parse(countPrice['totalprice'].toString());
       } else {
         statusRequest = StatusRequest.failure;
       }
